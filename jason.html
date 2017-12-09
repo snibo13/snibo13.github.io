@@ -7,6 +7,10 @@
     <link href = "https://fonts.googleapis.com/css?family=Josefin+Slab" rel = "stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type = "text/javascript" src = "autoscroll.js"></script>
+    <!-- Calling autoscroll -->
+    <script>
+      $('html, body').animate({scrollTop: $(document).height() - $(window).height()}, 10000, function() {$(this).animate({ scrollTop: 0 }, 1);});
+    </script>
     <style>
       h4 {font-size: 36px;}
       h1 {font-size: 96px;}
@@ -22,17 +26,6 @@
         <source src = "creditsinterstellar.ogg" type = "audio/ogg">
       </audio>
     </div>
-    <!-- Calling autoscroll -->
-    <script>
-      $('html, body').animate(
-        {
-          scrollTop: $(document).height() - $(window).height()
-
-        }, 10000, function() {
-          $(this).animate({ scrollTop: 0 }, 1);
-      }
-      );
-    </script>
     <!-- Resume -->
     <div id = "Resume" style = "background-color:black; color: white;text-align: center;margin-top: 0px;">
       <div id = "Education">
