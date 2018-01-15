@@ -1,56 +1,96 @@
 <!DOCTYPE html>
+<!-- Sidney Nimako - Boateng 1.15.2018 -->
 <html>
-  <head>
+
+<head>
     <title>Sidney NiBo</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href = "https://fonts.googleapis.com/css?family=Open+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
-    <link rel="stylesheet" href="index.css">
-    <link rel = "stylesheet" href = "w3.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
-      html,body,h1,h2,h3,h4,h5,h6 {font-family: "Josefin Sans","Open Sans", "Roboto", sans-serif; color: white;}
-      a { emphasis: none;}
-      .space{margin: 2.5px 10px 2.5px 10px;
-      .media{position:absolute;top:500px;left: 625px;}
-      .button1{color:white;background-color:#2196F3;-webkit-transition-duration: 0.4s;border: none;font-size:24px;border: 5px 5px 5px 5px;margin: 5px 5px 5px 5px;
-      }
-      .button1:hover{
-        background-color:white;
-        color:#2196F3;
-      }
-      .color{
-        color:white;
-        background-color:#2196F3;
-        -webkit-transition-duration: 0.4s;
-        margin: 5px 5px 5px 5px;
-      }
-      .color:hover{
-        color:#2196F3;
-        background-color:white;
-      }
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Josefin Sans", "Open Sans", "Roboto", sans-serif;
+            color: white;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .space {
+            margin: 2.5px 10px 2.5px 10px;
+        }
+        .color {
+            color: white;
+        }
+        .color:hover {
+            -webkit-transition-duration: 0.4s;
+            opacity: 0.4;
+        }
+
+        img {
+            max-height: inherit;
+            width: 45%;
+            height: 45%;
+            padding-left: 15px;
+        }
+
+        h1 {
+            font-size: 12vw;
+            font-style: italic;
+            line-height: 0px;
+        }
+
+        h3 {
+            line-height: 0px;
+            font-size: 7vw;
+        }
+        
+        h4 {
+            line-height: 0px;
+            font-size: 6vw;
+        }
+        
+        p {
+            line-height: 0px;
+            font-size: 3.5vw;
+        }
+        .text {
+            float: right;
+            position: relative;
+
+        }
+        
+        .center {
+            text-align: center;
+        }
     </style>
-  </head>
-  <body style = "background-color: #2196F3" class = "container">
-    <img src = "transparentavatar.png" alt ="Avatar" width = "300px;" height = "400px;" style = "position:absolute;top:30px; left:310px;border-radius: 5px;">
-	  <img src ="whitemasthead.png" alt = "Sidney" height = "600px;" width = "900px;" style = "position:absolute;top:-35px;left:325px;margin:0px 0px 0px 0px;">
-    <p style = "font-size:48px;border:0px 0px 0px 0px; margin: 0px 0px 0px 0px; position:absolute; top: 225px; left:625px;"><b>Nimako - Boateng</b></p>
-    <!--<hr style = "position:absolute; top:275px; left: 620px;width: 30%;"/>-->
-    <div style = "font-size:48px;position:absolute;top:310px;left:650px;right:265px;">
-      <a href = "/resume.html" class = "color" align = "center" >Resum\é</a>
-      <br>
-      <a href = "mailto:snibo13@gmail.com" >Contact Me</a>
-    </div>
-    <span class = "media" style = "position:absolute;top:450px;left: 310px;">
-      <a href = "#" onclick = "windows.open('https://www.instagram.com/s.nibo') windows.open('https://ww.instagram.com/_walt.sidney')"  style = "border: 13px;"><i class="fa fa-instagram fa-3x w3-hover-opacity space"></i></a>
-      <a href = "https://www.twitter.com/snibo13" target = "_blank" style = "border: 13px;"><i class="fa fa-twitter fa-3x w3-hover-opacity space"></i></a>
-      <a href = "https://www.linkedin.com/in/snibo" target = "_blank" style = "border: 13px;"><i class="fa fa-linkedin fa-3x w3-hover-opacity space"></i></a>
-      <a href = "https://www.github.com/snibo13" target = "_blank" style = "border: 13px;"><i class = "fa fa-github fa-3x w3-hover-opacity space"></i></a>
-  </span  >
+</head>
+
+<body style="background-color: #2196F3">
+    <div class="container">
+        <img src = "Tranparent_avatar.png" alt = "Vector Avatar">
+        <div class = "text center" style = "padding-top: 25px; padding-right: 200px">
+            <h1> Sidney </h1>
+            <h3>Nimako</h3>
+            <p style = "position: relative; top: 1vh;"><b>Student and Developer</b></p>
+            <a href = "/resume.html"><h4 style="position: relative; top: 5vh; left: 2vw;"> Resumé</h4></a>
+            <a href = "mailto:snibo13@gmail.com"><h4 style="position: relative; top:7vh; left: 2vw;">Contact Me</h4></a>
+        <div class="media" style="position:relative;top: 15vh;left: 2vw;">
+            <a href = "https://ww.instagram.com/_walt.sidney"><i class="fa fa-instagram fa-5x color"></i></a>
+            <a href = "https://www.twitter.com/snibo13" target = "_blank" style = "border: 13px;"><i class="fa fa-twitter fa-5x color space"></i></a>
+            <a href = "https://www.linkedin.com/in/snibo" target = "_blank" style = "border: 13px;"><i class="fa fa-linkedin fa-5x color space"></i></a>
+            <a href = "https://www.github.com/snibo13" target = "_blank" style = "border: 13px;"><i class = "fa fa-github fa-5x color"></i></a>
+          </div  >
+        </div>
+      </div>
 </body>
 </html>
