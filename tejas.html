@@ -184,11 +184,9 @@
    </head>
    <body style = "font-family: 'Lato',sans-serif" >
       <nav id="navbar">
-         <div id="left">
-            <a href="#home">
-            <img src="TSTennis.svg" height = "60vh" width = "inherit" style - "padding-top: 4vh;">
-            </a>
-         </div>
+         <a href="#home">
+            <img src="TSTennis.svg" height = "60vh" width = "inherit" style = "float: left;">
+         </a>
          <div id="right">
             <a class="link" href="#pricing">
             Pricing
@@ -210,9 +208,9 @@
             
             function myFunction() {
                 if (window.pageYOffset >= sticky) {
-                    navbar.classList.add("sticky")
+                   navbar.classList.add("sticky")
                 } else {
-                    navbar.classList.remove("sticky");
+                   navbar.classList.remove("sticky");
                 }
             }
          </script>
