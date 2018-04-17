@@ -1,325 +1,370 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <meta charset="utf-8">
-      <!-- Responsive Design -->
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <!-- Custom color classes -->
-      <link href="colors.css" type="text/css" rel="stylesheet">
-      <!-- Font Awesome CDN -->
-      <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!-- Boostrap & JQuery-->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <!-- Bree Serif Font -->
-      <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
-      <!-- Lato Font -->
-      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-      <!-- Open Sans Font -->
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel ="stylesheet">
-      <!-- IBM Plex Fonts -->
-      <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i|IBM+Plex+Sans+Condensed:400,400i|IBM+Plex+Sans:100,100i,400,400i,700,700i|IBM+Plex+Serif:400,400i" rel="stylesheet">
-      <!-- Oxygen Font -->
-      <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
-      <style>
-         .section
-         {
-         font-family:"Oxygen",sans-serif;
-         font-weight: bold;
-         }
-         div
-         {
-         margin: none;
-         padding: none;
-         }
-         a:hover
-         {
-         color: #009E11;
-         text-decoration:none;
-         }
-         .slides {
-         display: none;
-         }
-         /* Slideshow container */
-         .slideshow-container {
-         max-width: 100%;
-         margin: 0px;
-         padding: 0px;
-         }
-         /* Fading animation */
-         .fade {
-         -webkit-animation-name: fade;
-         -webkit-animation-duration: 5s;
-         animation-name: fade;
-         animation-duration: 5s;
-         }
-         @-webkit-keyframes fade {
-         from {
-         opacity: .4
-         }
-         to {
-         opacity: 1
-         }
-         }
-         @keyframes fade {
-         from {
-         opacity: .4
-         }
-         to {
-         opacity: 1
-         }
-         }
-         /* On smaller screens, decrease text size */
-         @media only screen and (max-width: 300px) {
-         .text {
-         font-size: 11px
-         }
-         }
-         #info-break {
-         width: " 80%";
-         color: #fff;
-         }
-         #contact-info {
-         text-align: center;
-         font-size: 4vh;
-         }
-         nav {
-         padding: auto;
-         margin: auto;
-         font-family: 'Lato', sans-serif;
-         font-size: 4vh;
-         height: 6vh;
-         background-color: #fff;
-         z-index: 99;
-         padding-bottom: 2vh;
-         }
-         h1 {
-         padding: 0px;
-         margin: 0px;
-         font-size: 8vh;
-         }
-         a {
-         color: inherit;
-         text-decoration: none;
-         }
-         body {
-         background-color: #ededed;
-         }
-         #left {
-         float: left;
-         padding-left: 2vw;
-         }
-         #right {
-         float: right;
-         padding-right: 2vw;
-         }
-         #home,
-         #pricing,
-         #bio,
-         #contact-info,
-         #hours {
-         padding: 0px;
-         margin: 0px
-         height: inherit;
-         width: 100%;
-         text-align: center;
-         align-content: center;
-         }
-         .link {
-         color: #009E11;
-         text-decoration: none;
-         background-color: #fff;
-         padding: 2px 5px 6px 5px;
-         }
-         .link:hover {
-         text-decoration: none;
-         color: #fff;
-         background-color: #009E11;
-         }
-         #home {
-         background-color: #fff;
-         font-family: "Bree Serif", serif;
-         text-align: center;
-         font-size: 7vh;
-         margin: 0px;
-         padding: 0px;
-         }
-         p,
-         li {
-         font-size: 4vh;
-         }
-         .sticky {
-         position: fixed;
-         top: 0;
-         width: 100%;
-         }
-         .sticky + #home {
-         padding-top: 6vh;
-         }
-         #contact:hover
-         {
-         color: #009E11;
-         }
-         .caption
-         {
-         font-family:'Open Sans', serif;
-         font-size: 7vh;
-         z-index: 2;
-         color:white;
-         margin: 0px;
-         padding: 0px;
-         position: absolute;
-         top: 65vh;
-         left: 12vw;
-         right: 12vw;
-         }
-         email:hover
-         {
-         color: #009E11;
-         font-size: 10vh;
-         }
-      </style>
-   </head>
-   <body style = "font-family: 'Lato',sans-serif" >
-      <nav id="navbar">
-         <a href="#home">
-            <img src="TSTennis.svg" height = "60vh" width = "inherit" style = "float: left;">
-         </a>
-         <div id="right">
-            <a class="link" href="#pricing">
-            Pricing
-            </a>
-            <a class="link" href="#bio">
-            Bio
-            </a>
-            <a class="link" href="#contact-info">
-            Contact Info
-            </a>
-         </div>
-         <script>
-            window.onscroll = function() {
-                myFunction()
-            };
-            
-            var navbar = document.getElementById("navbar");
-            var sticky = navbar.offsetTop;
-            
-            function myFunction() {
-                if (window.pageYOffset >= sticky) {
-                   navbar.classList.add("sticky")
-                } else {
-                   navbar.classList.remove("sticky");
-                }
+
+<head>
+    <meta charset="utf-8">
+    <!-- Responsive Design -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Custom color classes -->
+    <link href="colors.css" type="text/css" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Boostrap & JQuery-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Bree Serif Font -->
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <!-- Lato Font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <!-- Open Sans Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel ="stylesheet">
+    <!-- IBM Plex Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i|IBM+Plex+Sans+Condensed:400,400i|IBM+Plex+Sans:100,100i,400,400i,700,700i|IBM+Plex+Serif:400,400i" rel="stylesheet">
+    <!-- Oxygen Font -->
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+    <style>
+      .section
+      {
+        font-family:"Oxygen",sans-serif;
+        font-weight: bold;
+      }
+      div
+      {
+        margin: none;
+        padding: none;
+      }
+      a:hover
+      {
+        color: #009E11;
+        text-decoration:none;
+      }
+        .slides {
+            display: none;
+        }
+        /* Slideshow container */
+
+        .slideshow-container {
+            max-width: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+        /* Fading animation */
+
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 5s;
+            animation-name: fade;
+            animation-duration: 5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
             }
-         </script>
-      </nav>
-      <div id="home">
-         <div class="slideshow-container">
-            <div class="slides fade">
-               <img src="http://via.placeholder.com/1440x500" style="width:100%">
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+        /* On smaller screens, decrease text size */
+
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
+        }
+
+        #info-break {
+            width: " 80%";
+            color: #fff;
+        }
+
+        #contact-info {
+            text-align: center;
+            font-size: 4vh;
+        }
+
+        nav {
+            padding: auto;
+            margin: auto;
+            font-family: 'Lato', sans-serif;
+            font-size: 4vh;
+            height: 6vh;
+            background-color: #fff;
+            z-index: 99;
+        }
+
+        h1 {
+            padding: 0px;
+            margin: 0px;
+            font-size: 8vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #ededed;
+        }
+
+        #left {
+            float: left;
+            padding-left: 2vw;
+        }
+
+        #right {
+            float: right;
+            padding-right: 2vw;
+        }
+
+        #home,
+        #pricing,
+        #bio,
+        #contact-info,
+        #hours {
+            padding: 0px;
+            margin: 0px
+            height: inherit;
+            width: 100%;
+            text-align: center;
+            align-content: center;
+        }
+
+        .link {
+            color: #009E11;
+            text-decoration: none;
+            background-color: #fff;
+            padding: 2px 5px 6px 5px;
+        }
+
+        .link:hover {
+            text-decoration: none;
+            color: #fff;
+            background-color: #009E11;
+        }
+
+        #home {
+            background-color: #fff;
+            font-family: "Bree Serif", serif;
+            text-align: center;
+            font-size: 7vh;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        p,
+        li {
+            font-size: 4vh;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .sticky + #home {
+            padding-top: 6vh;
+        }
+
+        #contact:hover
+        {
+          color: #009E11;
+        }
+
+        .caption
+        {
+        font-family:'Open Sans', serif;
+        font-size: 7vh;
+        z-index: 2;
+        color:white;
+        margin: 0px;
+        padding: 0px;
+        position: absolute;
+        top: 65vh;
+        left: 12vw;
+        right: 12vw;
+        }
+
+        email:hover
+        {
+          color: #009E11;
+          font-size: 10vh;
+        }
+
+        #left
+        {
+          font-family: "Black Han Sans", sans-serif;
+          color: #009E11;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+</head>
+
+<body style = "font-family: 'Lato',sans-serif" >
+            <nav id="navbar">
+            <div id="left">
+                <a href="#home">
+                  TEJAS TENNIS
+                </a>
             </div>
-            <div class="slides fade">
-               <img src="http://via.placeholder.com/1440x500" style="width:100%">
+
+            <div id="right">
+                <a class="link" href="#pricing">
+              Pricing
+            </a>
+                <a class="link" href="#bio">
+              Bio
+            </a>
+                <a class="link" href="#contact-info">
+              Contact Info
+            </a>
             </div>
+            <script>
+                window.onscroll = function() {
+                    myFunction()
+                };
+
+                var navbar = document.getElementById("navbar");
+                var sticky = navbar.offsetTop;
+
+                function myFunction() {
+                    if (window.pageYOffset >= sticky) {
+                        navbar.classList.add("sticky")
+                    } else {
+                        navbar.classList.remove("sticky");
+                    }
+                }
+            </script>
+        </nav>
+    <div id="home">
+        <div class="slideshow-container">
+
             <div class="slides fade">
-               <img src="http://via.placeholder.com/1440x500" style="width:100%">
+                <img src="http://via.placeholder.com/1440x500" style="width:100%">
+            </div>
+
+            <div class="slides fade">
+                <img src="http://via.placeholder.com/1440x500" style="width:100%">
+            </div>
+
+            <div class="slides fade">
+                <img src="http://via.placeholder.com/1440x500" style="width:100%">
             </div>
             <p class = "caption">
-               <b>
-               Offering Tennis Lessons in the Naperville Area
-               </b>
+              <b>
+                Offering Tennis Lessons in the Naperville Area
+              </b>
             </p>
-         </div>
-         <!-- End of slideshow container -->
-         <!-- Slideshow Javascript -->
-         <script>
-            //Slideshow script
-                var index = 0;
-                slideshow();
-            
-                function slideshow() {
-                    var i;
-                    var slides = document.getElementsByClassName("slides");
-                    for (i = 0; i < slides.length; i++) {
-                        slides[i].style.display = "none";
-                    }
-                    index++;
-                    if (index > slides.length) {
-                        index = 1
-                    }
-                    slides[index - 1].style.display = "inherit";
-                    setTimeout(slideshow, 5000); // Change image every 5 seconds
-                }
-         </script>
-      </div>
-      <!-- End of Home -->
-      <!-- Start of Pricing -->
-      <div id="pricing" style = "padding-top: 2vh;">
-         <h1 class = "section">
-            Pricing
-         </h1>
-         <hr style="color: fff;">
-         <p>
+        </div>
+        <!-- End of slideshow container -->
+        <!-- Slideshow Javascript -->
+        <script>
+    //Slideshow script
+        var index = 0;
+        slideshow();
+
+        function slideshow() {
+            var i;
+            var slides = document.getElementsByClassName("slides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            index++;
+            if (index > slides.length) {
+                index = 1
+            }
+            slides[index - 1].style.display = "inherit";
+            setTimeout(slideshow, 5000); // Change image every 5 seconds
+        }
+    </script>
+    </div>
+    <!-- End of Home -->
+    <!-- Start of Pricing -->
+    <div id="pricing" style = "padding-top: 2vh;">
+        <h1 class = "section">
+        Pricing
+      </h1>
+        <hr style="color: fff;">
+        <p>
             One lesson is a 45-minute session with either individual or group instruction.
-         </p>
-         <div id = "lessons">
-            <h2>
-               Individual Lessons
-            </h2>
-            <p style = "font-size: 3vh;">
-               &bull; One Lesson a week - $15
-               &bull; Two Lessons a Week - $10 per Lesson
-            </p>
-            <h2>
-               Group Lessons Sessions every
-            </h2>
-            <p style = "font-size: 3vh;">
-               &bull; One Lesson
-            </p>
-         </div>
-         <a href="#contact-info">
-            <p>
-               Scheduele a lesson
-            </p>
-         </a>
-      </div>
-      <div id="hours" >
-         <h1  class = "section">
-            Available Lesson Times
-         </h1>
-         <hr>
-      </div>
-      <div id="bio" style = "height: 500px;margin-bottom: 15vh;">
-         <h1 class = "section">
-            Bio
-         </h1>
-         <img src = "http://via.placeholder.com/360x480" style = "position:relative; padding-right: 2vw; padding-left: 3vw; float:right;">
-         <p style ="padding-left:3vw; padding-right: 5vw; padding-top: 16vh; font-size: 5vh;">
-            I am a junior at Waubonsie Valley High School in Aurora, Illinois. I have been playing tennis for all my life and it is one of my favorite activities.
-            My past 3 years at Waubonsie I have been a member of the tennis team, and I returned as a varsity player this year. Lorem Ipsum dolor sit amet consequeter.
-         </p>
-      </div>
-      <div id="contact-info">
-         <h1 class = "section">
-            Contact Info
-         </h1>
-         <hr id="info-break">
-         <div id="phone">
+        </p>
+        <div id = "lessons">
+          <h2>
+            Individual Lessons
+          </h2>
+          <p style = "font-size: 3vh;">
+          &bull; One Lesson a week - $15
+
+          &bull; Two Lessons a Week - $10 per Lesson
+          </p>
+          <h2>
+          Group Lessons Sessions every
+          </h2>
+<p style = "font-size: 3vh;">
+          &bull; One Lesson
+          </p>
+        </div>
+        <a href="#contact-info">
+          <p>
+        Scheduele a lesson
+        </p>
+      </a>
+    </div>
+
+    <div id="hours" >
+        <h1  class = "section">
+        Available Lesson Times
+      </h1>
+
+        <hr>
+
+    </div>
+
+    <div id="bio" style = "height: 500px;margin-bottom: 15vh;">
+        <h1 class = "section">
+        Bio
+      </h1>
+      <img src = "http://via.placeholder.com/360x480" style = "position:relative; padding-right: 2vw; padding-left: 3vw; float:right;">
+      <p style ="padding-left:3vw; padding-right: 5vw; padding-top: 16vh; font-size: 5vh;">
+        I am a junior at Waubonsie Valley High School in Aurora, Illinois. I have been playing tennis for all my life and it is one of my favorite activities.
+        My past 3 years at Waubonsie I have been a member of the tennis team, and I returned as a varsity player this year.
+      </p>
+    </div>
+
+    <div id="contact-info">
+        <h1 class = "section">
+        Contact Info
+      </h1>
+        <hr id="info-break">
+        <div id="phone">
             <i class="fas fa-phone"></i>
             <a href="tel:6308881254">
-            (630) 888-1254
-            </a>
-         </div>
-         <br>
-         <div id="email">
+          (630) 888-1254
+        </a>
+        </div>
+        <br>
+        <div id="email">
             <i class="fas fa-at"></i>
             <a href="mailto:tejastennis@gmail.com">
-            tejastennis@gmail.com
-            </a>
-         </div>
-         <br>
-      </div>
-   </body>
+          tejastennis@gmail.com
+        </a>
+        </div>
+        <br>
+    </div>
+
+</body>
+
 </html>
