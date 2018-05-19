@@ -1,0 +1,82 @@
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #2196F3;
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+#content {
+  position: relative;
+  top: 30vh;
+  text-align: center;
+}
+#name {
+  position: relative;
+  top:-3vmin;
+  font-size: 13vmin;
+}
+#links {
+  font-size: 10vmin;
+}
+
+#description {
+  font-family: Roboto, sans-serif;
+  font-size: 6vmin;
+  color: #0B62A6;
+}
+
+
+.button {
+  margin-bottom: 5vmin;
+  position: relative;
+  top: 3vmin;
+  text-decoration: none;
+}
+
+.button:before {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 3px;
+  bottom: -3px;
+  left: -5%;
+  background: #0B62A6;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+  -webkit-transition: all 0,3s ease-in-out 0s;
+}
+
+.button:hover:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.button:hover {
+  /*transition-duration: 0.2s;*/
+  transition: all 0.2s ease-in-out 0s;
+  transform: scale(1.2);
+  /*-webkit-transition-duration: 0.2s;*/
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -webkit-transform: scale(1.2);
+}
+
+img {
+  padding: 0;
+  margin: 0;
+}
+#resume {
+  position: relative;
+  /*left: -2vw;*/
+}
+#projects {
+  position: relative;
+  left:-1.25vw;
+  top:5vmin;
+}
+
+#avatar {
+  float: right;
+  position: relative;
+  top: 92px;
+}
