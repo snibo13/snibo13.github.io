@@ -7,7 +7,7 @@ body {
 }
 #content {
   position: relative;
-  top: 30vh;
+  top: 28vh;
   text-align: center;
 }
 #name {
@@ -78,5 +78,5 @@ img {
 #avatar {
   float: right;
   position: relative;
-  top: 92px;
+  top: 90px;
 }
