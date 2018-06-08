@@ -1,86 +1,85 @@
 body {
-text-align: center;
+     text-align: center;
 }
-#head {
-text-align: center;
-align-content: center;
+ #head {
+     text-align: center;
+     align-content: center;
 }
-#header {
-display: inline;
-position: relative;
-top: 5vh;
-font-size: 6vmin;
+ #header {
+     display: inline;
+     position: relative;
+     top: 5vh;
+     font-size: 6vmin;
 }
-#header span:before, #header span:after
-{
-content:"";
-border-bottom: 4px solid white;
-position: absolute;
-top: 8px;
-height: 5px;
-width: 100px;
+ #header span:before, #header span:after {
+     content:"";
+     border-bottom: 4px solid white;
+     position: absolute;
+     top: 8px;
+     height: 5px;
+     width: 100px;
 }
-#header span:before {
-right: 100%;
-margin-right: 15px;
+ #header span:before {
+     right: 100%;
+     margin-right: 15px;
 }
-#header span:after {
-left: 100%;
-margin-left: 15px;
+ #header span:after {
+     left: 100%;
+     margin-left: 15px;
 }
-#header span {
-text-align:center;
+ #header span {
+     text-align:center;
 }
-#wip {
-display: inline;
-position: relative;
-text-align:center;
-font-size: 5.75vmin;
-padding-bottom: 5vmin;
+ #wip {
+     display: inline;
+     position: relative;
+     text-align:center;
+     font-size: 5.75vmin;
+     padding-bottom: 5vmin;
 }
-#wip span:before, #wip span:after
-{
-content:"";
-border-bottom: 4px solid white;
-position: absolute;
-top: 8px;
-height: 5px;
-width: 100px;
+ #wip span:before, #wip span:after {
+     content:"";
+     border-bottom: 4px solid white;
+     position: absolute;
+     top: 8px;
+     height: 5px;
+     width: 100px;
 }
-#wip span:before {
-right: 100%;
-margin-right: 15px;
+ #wip span:before {
+     right: 100%;
+     margin-right: 15px;
 }
-#wip span:after {
-left: 100%;
-margin-left: 15px;
+ #wip span:after {
+     left: 100%;
+     margin-left: 15px;
 }
-#wip span {
-text-align:center;
+ #wip span {
+     text-align:center;
 }
-#projects {
-padding-bottom: 3vh;
-text-align: center;
+ #projects {
+     padding-bottom: 3vh;
+     text-align: center;
 }
-.project-title{
-font-size: 5vmin;
-padding-bottom: 0;
+ .project-title{
+     font-size: 5vmin;
+     padding-bottom: 0;
 }
-.desc {
-font-size: 3vmin;
-/*width: 40%;*/
-position: inherit;
+ .desc {
+     font-size: 3vmin;
+    /*width: 40%;
+    */
+     position: inherit;
 }
-#freelance {
-font-size: 48px;
+ #freelance {
+     font-size: 48px;
 }
-nav {
-font-size: 4.5vmin;
-background-color: white;
-color: #2196F3;
-padding: 1.25vmin 0 2.5vmin 0;
+ nav {
+     font-size: 4.5vmin;
+     background-color: white;
+     color: #2196F3;
+     padding: 1.25vmin 0 2.5vmin 0;
 }
-nav a {
-position:relative;
-top: 0.75vmin;
+ nav a {
+     position:relative;
+     top: 0.75vmin;
 }
