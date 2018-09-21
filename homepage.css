@@ -23,7 +23,7 @@ body {
 #description {
   font-family: Roboto, sans-serif;
   font-size: 6vmin;
-  color: #0B62A6;
+  color: #123;
 }
 
 
@@ -41,7 +41,7 @@ body {
   height: 3px;
   bottom: -3px;
   left: -5%;
-  background: #0B62A6;
+  background: #123;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   transition: all 0.3s ease-in-out 0s;
@@ -79,5 +79,5 @@ img {
 #avatar {
   float: right;
   position: relative;
-  top: 90px;
+  top: 40px;
 }
