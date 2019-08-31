@@ -1,0 +1,241 @@
+html,body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+.section {
+  padding,margin: 0;
+}
+#fullpage {
+  padding, margin: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+span {
+  padding: 0;
+}
+#row-one-text,
+#row-two-text {
+  font-size: 64px;
+  font-family: "Roboto", sans-serif;
+  color: #C4CFD1
+}
+
+#row-one-text {
+  position: relative;
+  top: 25vh;
+}
+
+#row-two-text {
+  position: relative;
+  top: 175px;
+}
+
+#red-text {
+  color: #B00;
+}
+
+
+
+.nav {
+  font-size: 36px;
+}
+
+#home {
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+}
+#about {
+  background-color: #008855;
+  text-align: center;
+  /* overflow: hidden; */
+  /* padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100vw;
+  position: absolute;
+  top:0; */
+}
+
+#about-nav {
+  position: absolute;
+  bottom: 40px;
+  left: 44vw;
+}
+/*
+.button {
+  margin-bottom: 5vmin;
+  position: relative;
+  top: 3vmin;
+  text-decoration: none;
+} */
+#activities {
+  over
+}
+.button:before {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 3px;
+  bottom: -3px;
+  left: -5%;
+  background: #123;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+  -webkit-transition: all 0,3s ease-in-out 0s;
+}
+
+.button:hover:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.button:hover {
+  /*transition-duration: 0.2s;*/
+  transition: all 0.2s ease-in-out 0s;
+  transform: scale(1.2);
+  /*-webkit-transition-duration: 0.2s;*/
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -webkit-transform: scale(1.2);
+}
+
+#art-nav {
+  position: absolute;
+  bottom: 40px;
+  right: 45px;
+}
+
+#work-nav {
+  position: absolute;
+  bottom: 40px;
+  left: 45px;
+}
+
+.nav {
+  padding: 0;
+  margin: 0;
+  font-family: "Space Mono", monospace;
+}
+#main-text-about {
+  position: relative;
+  top: 5%;
+  left: 5%;
+  width: 70%;
+  font-family: "Roboto",sans-serif;
+  font-size: 52px;
+  text-align: left;
+  color: white;
+}
+#sub-text-about {
+  position: relative;
+  top: 1%;
+  color: white;
+  width: 80%;
+  left: 10%;
+  font-family: "Roboto",sans-serif;
+  font-size: 36px;
+  text-align: left;
+}
+#activities-pre {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  width: 60%;
+  left: 13%;
+  text-align: left;
+}
+#skills{
+  background-color: #FF5851;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+}
+
+.activities > li {
+  font-size: 24px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+.activities, .activities > li {
+  padding: 0;
+  margin: 0;
+}
+.activities {
+  position: relative;
+  top: 10%;
+  padding-top: 10%;
+  vertical-align: text-top;
+  overflow: hidden;
+}
+#list-one {
+  position: relative;
+  width: 20%;
+  display: inline-block;
+}
+#list-two {
+  position: relative;
+  width: 20%;
+  display: inline-block;
+
+}
+#list-three {
+  position: relative;
+  width: 20%;
+  display: inline-block;
+
+}
+#list-four {
+  position: relative;
+  width: 20%;
+  display: inline-block;
+}
+
+#skills-heading {
+  position: relative;
+  top: 70px;
+  left: 70px;
+}
+/* Did you get the reference? */
+#asterix {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  bottom: -30px;
+  left: 70vw;
+  width: 45vw;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#programming-skills, #software-skills, #language-skills {
+  width: 30%;
+  padding: 1.5%;
+  margin: 0;
+}
+#software-skills {
+  position: absolute;
+  left: 30%;
+  top: 10%;
+}
+#language-skills {
+  position: absolute;
+  left: 66%;
+  top: 10%;
+  z-index: 2;
+}

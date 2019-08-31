@@ -1,0 +1,68 @@
+.m-scene {
+  /** Basic styles for an animated element */
+  .scene_element {
+    animation-duration: 0.25s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+
+  }
+
+  /** An element that fades in */
+  .scene_element--fadein {
+    animation-name: fadeIn;
+  }
+
+  /** An element that fades in and slides up */
+  .scene_element--fadeinup {
+    animation-name: fadeInUp;
+  }
+
+  /** An element that fades in and slides from the right */
+  .scene_element--fadeinright {
+    animation-name: fadeInRight;
+  }
+}
+.anim-scene {
+  .anim-element {
+    -webkit-animation-duration: 0.25s;
+    -webkit-transition-timing: ease-in;
+    -webkit-animation-fill-mode: both;
+  }
+
+  .anim-element--fadeIn {
+    -webkit-animation: fadeIn;
+  }
+
+  .anim-element--fadeInUp {
+    -webkit-animation: fadeInUp;
+  }
+
+  .anim-element--fadeInRight {
+    -webkit-animation: fadeInRight;
+  }
+}
+
+.m-scene {
+  /** Basic styles for an animated element */
+  .scene_element {
+    animation-duration: 0.25s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+
+  }
+
+  /** An element that fades in */
+  .scene_element--fadein {
+    animation-name: fadeIn;
+  }
+
+  /** An element that fades in and slides up */
+  .scene_element--fadeinup {
+    animation-name: fadeInUp;
+  }
+
+  /** An element that fades in and slides from the right */
+  .scene_element--fadeinright {
+    animation-name: fadeInRight;
+  }
+}
