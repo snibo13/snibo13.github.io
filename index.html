@@ -1,37 +1,30 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Sidney NiBo</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="homepage.css">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120576230-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-120576230-1');
-    </script>
-  </head>
-  <body>
-    <img src="transparentavatar.png" id="avatar" height="100%" width="33%">
-    <div id="content">
-      <span id="name"> Sidney Nimako Boateng</span>
-      <br>
-      <div id="description">
-        Student. Developer. Technophile.
-      </div>
-      <div id="links">
-        <a href="/resume.html" class="button" id="resume">Resume</a>
-        <br>
-        <a href="/projects.html" class="button" id="projects">Projects</a>
-      </div>
-    </div>
-  </body>
+<html lang="en" style="overflow: hidden">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sidney Nimako</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/assets/css/keyframes.css">
+  <link rel="stylesheet" href="/assets/css/pageTransitions.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="transition.js"></script>
+  <script src="assets/main.js"></script>
+  <script>
+    console.log(localStorage.getItem('bc'));
+    $('body').css('background-color',localStorage.getItem('bc'));
+  </script>
+</head>
+<body class="m-scene" style="background-color: #B8C4CC">
+  <div id="home" class="scene_element scene_element--fadeinup"></div>
+  <div style="height: 100vh;width: 100vw;text-align: center" class="index m-scene scene_elemeent scene_element--fadeindown">
+    <h1 id="row-one-text" class="scene_element scene_element--fadeinup">Hello! I'm Sidney Nimako-Boateng </h1>
+    <h1 id="row-two-text" class="scene_element scene_element--fadeinup">I am a student at <span id="red-text">Carnegie Mellon University</span></h1>
+    <span class="button nav scene_element scene_element--fadeinright" id="about-nav"><a href="about.html">About</a></span>
+    <span class="button nav scene_element scene_element--fadeinright" id="art-nav"><a href="art.html">"Art"</a></span>
+    <span class="button nav scene_element scene_element--fadeinright" id="work-nav"><a href="work.html">Work</a></span>
+    <span class="button nav scene_element scene_element--fadeinright" id="skill-nav"><a href="skill.html">Skills</a></span>
+  </div>
+</body>
 </html>

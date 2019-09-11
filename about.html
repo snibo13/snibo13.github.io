@@ -1,55 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow: hidden">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <script
-  src="https://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/assets/css/keyframes.css">
-  <link rel="stylesheet" href="/assets/css/pageulansitions.css">
   <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+  <link rel="stylesheet" href="/assets/css/keyframes.css">
+  <link rel="stylesheet" href="/assets/css/pageTransitions.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/3bfb094edd.js"></script>
+  <script src="assets/main.js"></script>
+  <script src="transition.js"></script>
+  <script>
+    console.log(localStorage.getItem('bc'));
+    $('body').css('background-color',localStorage.getItem('bc'));
+  </script>
 </head>
-<body>
-  <div id="about" class="m-scene">
-    <h1 id="main-text-about" class = "scene_element scene_element--fadeinleft">
-      Hi, I'm Sidney. I study mechanical engineering, robotics and computer science at Carnegie Mellon University.
-    </h1>
-    <h1 id="sub-text-about" class="scene_element--fadeinup">
-      <div class="scene_element scene_element--fadeinup">
-        I am also interested in design, music, fashion and languages.
-        <br>
-        &#8195;When I'm not glued behind my computer seering lines
-        <br>&#8195;of code into my eyeballs I may be doing any of the following:
+<body style="overflow: hidden" class="m-scene">
+  <div id="about" class="scene_element scene_element--fadeindown"></div>
+      <h1 class="scene_element scene_element--fadeinleft" id="main-text-about">
+      I study mechanical engineering, robotics and computer science at Carnegie Mellon University
+      </h1>
+      <h1 id="sub-text-about" class="scene_element scene_element--fadeinright">
+        I am also interested in design, music, fashion and language.
+      </h1>
+      <h1 id="activities-pre" class="scene_element scene_element--fadeinright">
+        When I'm not glued behind my computer seering lines of code into my eyeballs, I may be doing any of the following:
+      </h1>
+      <div id="activities">
+        <ul id="list-one" class="activities scene_element scene_element--fadeinup">
+          <li>Soccer</li>
+          <li>Drawing</li>
+          <li>Writing</li>
+        </ul>
+        <ul id="list-two" class=" activities scene_element scene_element--fadeinup">
+          <li>Building things that fall apart</li>
+          <li>I'm really still coding</li>
+          <li>Playing ukulele</li>
+        </ul>
+        <ul id="list-three" class="activities scene_element scene_element--fadeinup">
+          <li>Reading</li>
+          <li>Playing piano</li>
+          <li>Listening to music</li>
+        </ul>
+        <ul id="list-four" class="activities scene_element scene_element--fadeinup">
+          <li>Playing Violin</li>
+          <li>Practising Photography</li>
+          <li>Watching a film</li>
+          <li>Butchering pronounciations</li>
+        </ul>
       </div>
-        <ul id="list-one" class="scene_element scene_element--fadeinup">
-          <li class="activities">Soccer</li>
-          <li class="activities">Drawing</li>
-          <li class="activities">Writing</li>
-        </ul>
-        <ul id="list-two" class="scene_element scene_element--fadeinup">
-          <li class="activities">Building things that fall apart</li>
-          <li class="activities">I'm actually still coding</li>
-          <li class="activities">Playing Ukulele</li>
-        </ul>
-        <ul id="list-three" class="scene_element scene_element--fadeinup">
-          <li class="activities">Reading</li>
-          <li class="activities">Playing Piano</li>
-          <li class="activities">Playing Violin</li>
-        </ul>
-        <ul id="list-four" class="scene_element scene_element--fadeinup">
-          <li class="activities">Listening to Music</li>
-          <li class="activities">Practising Photography</li>
-          <li class="activities">Watching a film</li>
-          <li class="activities">Butchering prononciations</li>
-        </ul>
+      <span class="button nav scene_element scene_element--fadeinright" id="home-nav"><a href="indexn.html">Home</a></span>
 
-    </h1>
-  </div>
-  </div>
 </body>
 </html>

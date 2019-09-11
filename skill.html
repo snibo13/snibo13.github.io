@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow: hidden">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/assets/css/keyframes.css">
+  <link rel="stylesheet" href="/assets/css/pageTransitions.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/3bfb094edd.js"></script>
+  <script src="transition.js"></script>
+  <script src="assets/main.js"></script>
+  <script>
+    console.log(localStorage.getItem('bc'));
+    $('body').css('background-color',localStorage.getItem('bc'));
+  </script>
+</head>
+<body style="overflow: hidden" class="m-scene">
+  <div id="skills" class="scene_element scene_element--fadeindown"></div>
+      <div id="skill">
+        <ul id="skills-list-one" class="skills scene_element scene_element--fadeinup">
+        <li><h2>Languages and Frameworks</h2></li>
+        <li>Python</li>
+        <li>Java</li>
+        <li>HTML</li>
+        <li>JavaScript</li>
+        <li>Flutter</li>
+        <li>CSS</li>
+        <li>Dart</li>
+        <li>Node.js</li>
+        <li>Express</li>
+        <li>SQL</li>
+        <li>Git</li>
+        <li>C & C++</li>
+        </ul>
+        <ul id="skills-list-two" class=" skills scene_element scene_element--fadeinup">
+          <li><h2>Operating Systems and Software</h2></li>
+          <li>Autodesk Inventor</li>
+          <li>Autodesk Fusion 360</li>
+          <li>Figma</li>
+          <li>Windows</li>
+          <li>Linux (Ubuntu, Debian)</li>
+          <li>Blender</li>
+        </ul>
+        <ul id="skills-list-three" class="skills scene_element scene_element--fadeinup">
+          <li><h2>The Other Kind of Language</h2></li>
+          <li>English (Native)</li>
+          <li>French (Proficient)</li>
+          <li>ASL (Novice)</li>
+          <li>Spanish (Novice)</li>
+          <li>Japanese (Novice)</li>
+        </ul>
+      </div>
+      <h1 class="scene_element scene_element--fadeinleft" id="skills-heading">Skills*</h1>
+      <h1 id="asterix" class="scene_element scene_element--fadeinright">*Read things I think I'm good at</h1>
+      <span class="button nav scene_element scene_element--fadeinright" id="home-nav"><a href="indexn.html">Home</a></span>
+
+</body>
+</html>
