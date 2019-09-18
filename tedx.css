@@ -1,0 +1,80 @@
+#month-goal {
+  border: solid 3px var(--yellow);
+  color: var(--yellow);
+}
+#short-goal {
+  border: solid 3px  var(--coral);
+  color: var(--coral);
+}
+#month-goal:hover {
+  color: var(--background-color);
+  background-color: var(--yellow);
+}
+#short-goal:hover {
+  color: var(--background-color);
+  background-color: var(--coral);
+}
+#month-goal {
+  position: relative;
+  bottom: 10vh;
+}
+#short-goal {
+  position: relative;
+  bottom: 10vh;
+}
+button {
+  background-color: var(--background-color);
+  padding: 15px;
+  font-size: 24px;
+  font-family: "Josefin Sans", sans-serif;
+  transition-duration: 0.25s;
+  border-radius: 5px;
+  bottom:10vh;
+  margin: 0 auto;
+}
+button:focus {
+  outline: none;
+}
+#buttons {
+  display: flex;
+  position: relative;
+  top: 35vh;
+  margin: 0 auto;
+}
+#main-text {
+  font-size: 96px;
+  text-align: center;
+  z-index: 2;
+  padding: 0;
+  margin: 0;
+  font-family: "Sacramento", cursive;
+  color: var(--peppermint);
+}
+#goal {
+  font-size:10vh;
+  position: relative;
+  top:13vh;
+  /* bottom: 6vh; */
+  color: var(--sky-blue);
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+
+html {
+  background-color: var(--background-color);
+  overflow: hidden;
+}
+:root {
+  --pink: #F2358D;
+  --pastel-blue: #ACD1F2;
+  --sky-blue: #41AEF2;
+  --yellow: #F2E205;
+  --coral: #F26D6D;
+  --purple: #8271DE;
+  --robins-egg: #769FE8;
+  --offblue: #75C5D1;
+  --peppermint: #76E8BA;
+  --clover: #71DE76;
+  --background-color: #F2EEF5;
+}
