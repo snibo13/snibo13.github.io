@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400|Red+Hat+Display&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(
+      function() {
+        var h = $('body').height();
+        $('#crayon-overlay').height(h);
+
+      }
+    )
+  </script>
+</head>
+
+<body>
+  <!-- <div id="crayon-overlay"></div> -->
+  <div id="masthead">
+    <!-- <div id="masthead-container"> -->
+    <div id="masthead-text">
+      <h2 id="hello">Hello,<br> My name is Sidney.</h2>
+      <p id="intro">I am an undergraduate engineering student @ <span id="cmu-red">Carnegie Mellon University</span></p>
+    </div>
+    <img id="head-graphic" src="facecartoon.png" alt="">
+    <!-- <video autoplay loop playsinline preload="auto" src="/anim.mp4" id="head-graphic"></video> -->
+    <!-- </div> -->
+  </div>
+  <div id="about">
+    <p id="para">
+      I’m an undeclared undergraduate at Carnegie Mellon University hoping to study mechanical or electrical engineering. I love robotics, computer science and design.
+      </br>
+      </br>
+      I am currently searching for summer 2020 internship and research opportunities. If you think I would be a good fit for your company or research group, feel free to reach out.
+    <br>
+    <br>
+    <span id="links">
+      <a href="#work-container"> Work </a>
+      <a href="resume.pdf"> Resume </a>
+      <a href="mailto:snimakob@andrew.cmu.edu"> Contact Me </a>
+    </span>
+  </p>
+  </div>
+  <div id="work-container">
+    <div id="project">
+      <h2 class="projects-header"> Things I've Built </h2>
+      <hr>
+      <div id="projects">
+        <div class="card">
+          <div id="container">
+            <h1 class="project-title">Notes for Terminal</h1>
+            <p class="project-description">A Simple note taking app for the terminal built in C.</p>
+            <a href="https://github.com/snibo13/Notes-for-Terminal" class="project-link"> Read More </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="building">
+      <h2 class="projects-header"> Things I'm Building </h2>
+      <hr>
+      <div id="building-projects">
+        <div class="card">
+          <div id="container">
+            <h1 class="project-title">Four Fours</h1>
+            <p class="project-description">A Math puzzle game application for IOS and android.</p>
+            <a href="" class="project-link"> Coming Soon </a>
+          </div>
+        </div>
+        <div class="card">
+          <div id="container">
+            <h1 class="project-title">Closet</h1>
+            <p class="project-description">An outfit advisor based on colour.</p>
+            <a href="" class="project-link"> Coming Soon </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer> &copy; Sidney Nimako 2019</footer>
+</body>
+
+</html>
