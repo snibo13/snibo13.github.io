@@ -30,6 +30,7 @@ a {
 body {
   font-family: "Open Sans", sans-serif;
   background-color: var(--off-white);
+  font-size: x-large;
 }
 
 header {
@@ -67,7 +68,6 @@ header {
   /* background-color: var(--off-white); */
   width: 40%;
   font-family: "Raleway", sans-serif;
-  font-size: 24px;
 }
 
 #masthead-video {
