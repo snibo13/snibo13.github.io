@@ -5,83 +5,88 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Sidney Nimako</title>
-  <link rel="stylesheet" href="index.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400|Red+Hat+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154968547-1"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <title>Sidney Nimako</title>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    tags = ["Engineer", "Designer", "Amatuer Artist", "VR Enthusiast",
+      "Code Poet"
+    ];
+    var prevIndex = 0;
 
-    gtag('config', 'UA-154968547-1');
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    function getTag() {
+      index = getRandomInt(tags.length);
+      if (index == prevIndex) {
+        getTag();
+      } else {
+        return tags[index];
+      }
+    }
+
+    $(document).ready(function() {
+      setInterval(function() {
+        $("#tagline").text(getTag());
+      }, 1000);
+
+    });
   </script>
 </head>
 
 <body>
-  <div id="masthead">
-    <div id="masthead-text">
-      <h2 id="hello">Hello,<br> My name is Sidney.</h2>
-      <p id="intro">I am an undergraduate engineering student @ <span id="cmu-red">Carnegie Mellon University</span></p>
-    </div>
-    <img id="head-graphic" src="blinking.gif" alt="Sidney Nimako Cartoon face">
+  <!-- <div id="foreground"></div> -->
+  <div id="container">
+    <h1 id="greeting">Hi! I'm Sidney Nimako.</h1>
+    <div id="masthead">
+      <div id="video-container">
+        <span id="tagline">Engineer</span>
+        <img src="masthead.png" alt="Masthead" height="330px" style="border-radius: 2vmin;">
+        <!-- <video id="masthead-video" loop="" muted="" playsinline="" autoplay="" preload="auto" src="hm-hero-desktop-non-retina.mp4"></video> -->
+      </div>
 
-  </div>
-  <div id="about">
-    <p id="para">
-      I’m a mechanical engineering undergraduate at Carnegie Mellon University. I am interested in robotics, computer science and design.
-      </br>
-      </br>
-      I am currently searching for Fall 2020 internship and research opportunities. If you think I would be a good fit for your company or research group, feel free to reach out.
-    <br>
-    <br>
-    <span id="links">
-      <a href="#work-container"> Work </a>
-      <a href="Resume.pdf"> Resume </a>
-      <a href="mailto:snimakob@andrew.cmu.edu"> Contact Me </a>
-      <a href="http://github.com/snibo13"><i class="fa fa-github"></i></a>
-    </span>
-  </p>
-  </div>
-  <div id="work-container">
-    <div id="project">
-      <h2 class="projects-header"> Things I've Built </h2>
-      <hr>
-      <div id="projects">
-        <div class="card">
-          <div id="container">
-            <h1 class="project-title">Notes for Terminal</h1>
-            <p class="project-description">A Simple note taking app for the terminal built in C.</p>
-            <a href="https://github.com/snibo13/Notes-for-Terminal" class="project-link"> Read More </a>
-          </div>
+      <div id="bio">
+        <div id="about">
+          I’m a mechanical engineering undergraduate @
+          <span id="cmu">Carnegie Mellon University</span>.
+          I am interested in robotics, computer science and design.
+          I am currently searching for Fall 2020 internship and
+          research opportunities. If you think I would be a good fit for your
+          company or research group, feel free to reach out.
         </div>
-      </div>
-    </div>
-    <div id="building">
-      <h2 class="projects-header"> Things I'm Building </h2>
-      <hr>
-      <div id="building-projects">
-        <div class="card">
-          <div id="container">
-            <h1 class="project-title">Four Fours</h1>
-            <p class="project-description">A Math puzzle game application for IOS and android.</p>
-            <a href="" class="project-link"> Coming Soon </a>
-          </div>
-        </div>
-        <div class="card">
-          <div id="container">
-            <h1 class="project-title">Closet</h1>
-            <p class="project-description">An outfit advisor based on colour.</p>
-            <a href="" class="project-link"> Coming Soon </a>
-          </div>
-        </div>
+        <br>
+        <span id="links">
+          <a class="hover-box" href="Resume.pdf"> Resume </a>
+          <a class="hover-box" href="http://github.com/snibo13">Github</a>
+          <a class="hover-box" href="http://linkedin.com/in/snibo">LinkedIn</a>
+          <a class="hover-box" href="mailto:snimakob@andrew.cmu.edu"> Contact Me </a>
+        </span>
       </div>
     </div>
   </div>
-  <footer> &copy; Sidney Nimako 2019</footer>
+  <div id="projects">
+    <h2 id="projects-title">Projects</h2>
+    <div class="card">
+      <h1 class="project-title">Notes for Terminal (Done)</h1>
+      <p class="project-description">A simple note taking app for the terminal built in C and C++.</p>
+      <a href="https://github.com/snibo13/Notes-for-Terminal" class="project-link">Read More</a>
+    </div>
+    <div class="card">
+      <h1 class="project-title">Four Fours (In Progress)</h1>
+      <p class="project-description">A math puzzle application for IOS and Android in Dart (Flutter).</p>
+      <a href="" class="project-link">Coming Soon</a>
+    </div>
+    <div class="card">
+      <h1 class="project-title">Stealth Mode Social Network (In Progess)</h1>
+      <p class="project-description">Social Network with GraphQL, Node.JS and MongoDB backend with a Dart (Flutter) frontend</p>
+      <a href="" class="project-link">In Progress</a>
+    </div>
+  </div>
+  <footer>&copy; Sidney Nimako 2020</footer>
 </body>
 
 </html>
