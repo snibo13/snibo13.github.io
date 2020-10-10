@@ -2,40 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
   <title>Sidney Nimako</title>
-  <script>
-    tags = ["Engineer", "Designer", "Amatuer Artist", "VR Enthusiast",
-      "Code Poet"
-    ];
-    var prevIndex = 0;
-
-    function getRandomInt(max) {
-      return Math.floor(Math.random() * Math.floor(max));
-    }
-
-    function getTag() {
-      index = getRandomInt(tags.length);
-      if (index == prevIndex) {
-        getTag();
-      } else {
-        return tags[index];
-      }
-    }
-
-    $(document).ready(function() {
-      setInterval(function() {
-        $("#tagline").text(getTag());
-      }, 1000);
-
-    });
-  </script>
 </head>
 
 <body>
@@ -44,15 +16,13 @@
     <h1 id="greeting">Hi! I'm Sidney Nimako.</h1>
     <div id="masthead">
       <div id="video-container">
-        <span id="tagline">Engineer</span>
-        <img src="masthead.png" alt="Masthead" height="600px" style="border-radius: 2vmin;">
-        <!-- <video id="masthead-video" loop="" muted="" playsinline="" autoplay="" preload="auto" src="hm-hero-desktop-non-retina.mp4"></video> -->
+        <span id="tagline">Engineer, Designer & Artist</span>
+        <img id="masthead-img" src="masthead.png" alt="Masthead" style="border-radius: 2vmin;">
       </div>
 
       <div id="bio">
         <div id="about">
-          I’m a mechanical engineering undergraduate @
-          <span id="cmu">Carnegie Mellon University</span>.
+          I’m a mechanical engineering undergraduate at<span id="cmu">Carnegie Mellon University</span>.
           I am interested in robotics, computer science and design.
           I am currently searching for Fall 2020 internship and
           research opportunities. If you think I would be a good fit for your
