@@ -37,7 +37,7 @@
   body {
     font-family: "Open Sans", sans-serif;
     /* background-color: white; */
-    background-color: #f3f3f3;
+    background-color: #fbfbfb;
     /* background-color: var(--oxford-blue); */
     font-size: x-large;
   }
@@ -59,7 +59,7 @@
   }
 
   #greeting {
-    color: var(--cmu-red);
+    /* color: var(--cmu-red); */
     grid-column-start: 2;
     grid-column-end: 3;
   }
@@ -145,23 +145,15 @@
     margin: 0.5vmin;
     padding: 0.3vmin 0.4vmin;
     border-radius: 0.5vmin;
-    color: white;
-    background-color: var(--cmu-red);
-  }
-
-  #cmu:hover {
     color: var(--cmu-red);
-    font-weight: bolder;
-    background-color: inherit;
-    -webkit-transition: color 100ms linear;
-    -o-transition: color 100ms linear;
-    transition: color 100ms linear;
   }
 
+  
   #links {
     padding-top: 1vmin;
-    grid-column-start: 1;
+    grid-column-start: 7;
     grid-column-end: end;
+    text-align: left;
   }
 
   .hover-box {

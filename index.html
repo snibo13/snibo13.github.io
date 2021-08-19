@@ -6,64 +6,263 @@
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="index.css">
+  <!-- <link rel="stylesheet" href="index.css"> -->
   <title>Sidney Nimako</title>
+  <style>
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    #links>a {
+      padding: 0vh 1vw;
+      
+    }
+
+    :root {
+      --dark-orange: #fb8b24ff;
+      --queen-blue: #577590ff;
+      --cmu-red: #c51230ff;
+      --green-munsell: #04a777ff;
+      --midnight-green-eagle-green: #225560ff;
+      --oxford-blue: #011638;
+      --space-cadet: #2E294E;
+      --cadet-blue: #58A4B0;
+      --steel-teal: #607B7D;
+      --sweet-brown: #A63D40;
+    }
+/* 
+    .hover-box {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    margin: 1vmin;
+    padding: 3px 5px;
+    -webkit-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+    box-sizing: border-box;
+    box-shadow: inset 0 -2px 0 var(--cmu-red);
+  }
+
+  .hover-box:hover {
+    border-radius: 3px;
+    box-shadow: inset 0 -64px 0 0 var(--cmu-red);
+    color: white;
+  } */
+
+  html {
+    overflow-x: hidden;
+  }
+  #links > a
+  {
+    position: relative;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.5s;
+  
+  }
+  #links > a::before {
+  position: absolute;
+  content: "";
+  
+  /* width: 3vw; */
+  width: 80%;
+  height: 3px;
+  /* left: -1px; */
+  top: 100%;
+  background: #ff7000;
+  transition: transform 0.5s;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+#links > a:hover {
+  /* color: #95a5a6; */
+}
+#links > a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+  #head {
+    display:grid; grid-template-columns: 10vw 35vw 5vw 35vw 10vw; padding-top: 20vh; padding-bottom: 30vh;
+  }
+
+  #left {
+    grid-column-start: 2; font-size: 2.5vw; margin-right: 0; padding: 0.5vw; padding-bottom: 0; margin-bottom: 0; font-weight: 600;
+  }
+  #links {
+    font-weight: 600; text-align: center; grid-column-start: 2; font-size: 1.25vw;
+  }
+
+  #right {
+    grid-column-start: 4; font-size: 1.5vw; margin-left: 0; padding: 0.5vw; font-weight: 400;
+  }
+
+  #currently {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    position: relative;
+    left: 15vw;
+    font-size: 1.25vw;
+    font-weight: 600;
+    padding-top: 5vh;
+    
+  }
+
+  #one-liners {
+    display: grid;
+    grid-template-columns: 10vw 25vw 5vw 25vw 12.5vw;
+  }
+
+  #one-liners > h1, h2, h3 {
+    line-height: 3vh;
+  }
+
+  .project {
+    display: grid; grid-template-columns: 30vw 10vw 40vw; padding-bottom: 4vh;
+  }
+
+  .project > img {
+    position: relative; width: 25vw; border-radius: 10px; height: auto;
+  }
+
+  .project > a {
+    font-weight: bold;
+  }
+  </style>
 </head>
 
-<body>
-  <!-- <div id="foreground"></div> -->
-  <div id="container">
-    <h1 id="greeting">👋 Hi! I'm Sidney Nimako.</h1>
-    <div id="masthead">
-
-      <div id="bio">
-        <div id="about">
-          <p>
-            I’m a mechanical engineering undergraduate @ <br> <span id="cmu">Carnegie Mellon University</span>
-          </p>
-          <p>
-            I am interested in robotics, computer science, indsutrial design, game development and more.
-          </p>
-          <p>
-            I'm working on quite a few different things but I'm always up for a few more spinning plates. Take a look at some of my in progress
-          and completed projects down below and if you think I would be a good fit for your company or research group, feel free to reach out. Cheers!
-          </p>
-          
-        </div>
+<body style=" font-family: 'Open Sans', sans-serif;">
+    <div id="head" >
+      <div id="left" style="">
+        Hello! I'm Sidney Nimako. &nbsp; I'm a Mechanical Engineering and Robotics Undergraduate @
+        <span id="cmu" style="color:var(--cmu-red)">Carnegie Mellon University</span>
         <br>
-        <span id="links">
+        <span id="links" style="">
           <a class="hover-box" href="Resume.pdf"> Resume </a>
           <a class="hover-box" href="http://github.com/snibo13">Github</a>
           <a class="hover-box" href="http://linkedin.com/in/snibo">LinkedIn</a>
-          <a class="hover-box" href="mailto:snimakob@andrew.cmu.edu"> Contact Me </a>
+          <a class="hover-box" href="mailto:snimakob@andrew.cmu.edu">Contact Me </a>
         </span>
       </div>
+      <div id="right" style="">
+        <p>
+          I am interested in <span id="robo" style="font-weight: 600; color:var(--queen-blue);">Robotics </span>, 
+          <span style="font-weight: 600; color:var(--green-munsell)"> Computer Science</span>, 
+          <span style="font-weight: 600; color:var(--midnight-green-eagle-green);"> Indsutrial Design</span> and 
+          <span style="font-weight: 600; color:var(--dark-orange);"> Game Development</span>.
+        </p>
+        <p>
+          I'm working on quite a few different things but I'm always up for a few more spinning plates. Take a look at some of my in progress
+        and completed projects down below and if you think I would be a good fit for your company or research group, feel free to reach out. Cheers!
+        </p>
+        
+      </div>
+      <div id="currently">
+        Currently: Robotics Intern @ Facebook AI Research and The Robotics Institue
+      </div>
+      
     </div>
-  </div>
-  <div id="projects">
-    <h2 id="projects-title">Projects</h2>
-    <div class="card">
-      <h1 class="project-title">Notes for Terminal (Done)</h1>
-      <p class="project-description">A simple note taking app for the terminal built in C and C++.</p>
-      <a href="https://github.com/snibo13/Notes-for-Terminal" class="project-link">Read More</a>
-    </div>
-    <div class="card">
-      <h1 class="project-title">Mobot</h1>
-      <p class="project-description">An arduino-based robot built as a project for Fundamentals of Engineering.</p>
-      <a href="https://medium.com/sidney-nimakos-development-blog/mobot-50025dce2dcc" class="project-link">Read More</a>
-    </div>
-    <div class="card">
-      <h1 class="project-title">Four Fours (In Progress)</h1>
-      <p class="project-description">A math puzzle application for IOS and Android in Dart (Flutter).</p>
-      <a href="" class="project-link">Coming Soon</a>
-    </div>
-    <div class="card">
-      <h1 class="project-title">Stealth Mode Social Network (In Progess)</h1>
-      <p class="project-description">Social Network with GraphQL, Node.JS and MongoDB backend with a Dart (Flutter) frontend</p>
-      <a href="" class="project-link">In Progress</a>
-    </div>
-  </div>
-  <footer>&copy; Sidney Nimako 2020</footer>
-</body>
+
+    <main style="padding-left: 10vw;">
+      <div class="project" style="">
+        <img src="BrevisFull.JPG" alt="" style="">
+        <div style="grid-column-start: 3;">
+        <h1>Brevis Macro Keypad</h1>
+        <br>
+        <h2>February 2021</h2>
+        <p>
+          I designed the PCB and firmware for a seven key macropad with a rotary encoder.
+        </p>
+        <a href="projects.snibo.me/brevis">Read More</a>
+        </div>
+        
+      </div>
+      <div class="project" style="">
+        <img src="Notes For Terminal.png" alt="" style="">
+        <div style="grid-column-start: 3;">
+        <h1>Notes For Terminal</h1>
+        <br>
+        <h2>June 2020</h2>
+        <p>
+          A Simple Notes App that lives entirely in the terminal written in C
+        </p>
+        <a href="https://github.com/snibo13/Notes-for-Terminal">Read More</a>
+        </div>
+      </div>
+      
+      <!-- <div class="project" style="">
+        <img src="" alt="" style="">
+        <div style="grid-column-start: 3;">
+          Homework 4
+        <h1>Self-Balancing Bot Simulation</h1>
+        <br>
+        <h2>Spring 2021</h2>
+        <p>
+          As part of the Introduction to Robotics course, we wrote code for self-balancing robots on several occasions. One based on the PID control method and a second based on a machine learning model that first imitated a PID controller and then expanded on it to optimize the balance.
+        </p>
+        <a href="https://github.com/snibo13/Notes-for-Terminal">Read More</a>
+        </div>
+      </div> -->
+      
+      <div class="project" style="">
+        <img src="Mobot1.jpeg" alt="" style="">
+        <div style="grid-column-start: 3;">
+          <!-- Homework 4 -->
+        <h1>Mobot</h1>
+        <br>
+        <h2>Winter 2020</h2>
+        <p>
+          An arduino-based robot built as a project for Fundamentals of Engineering, used a PID based control scheme to follow a line.
+        </p>
+        <a href="http://projects.snibo.me/mobot-summary/">Read More</a>
+        </div>
+      </div>
+      <div id="one-liners">
+        <h1 style="grid-column-start:2; text-align: right;">One-Liners</h1>
+        <h3 style= "grid-column-start: 4;">Some smaller projects that are simple or I can't go into more detail on</h3>
+        <br>
+        <h2 style="grid-column-start: 2; text-align: right;">
+          Stealth Social Network (Ongoing)
+          <br>
+          Image Classifier (Spring 2021) 
+          <br>
+          Image Detector (Spring 2021) 
+          <br>
+          <br>
+          Line Follower Simulator (Spring 2021)
+          <br>
+          Odometry in Simulation(Spring 2021)
+          <br>
+          <br>
+          Path Planning Robot (Spring 2021)
+          <br>
+          <br>
+          Localization (Spring 2021)
+        </h2>
+        <h3 style="grid-column-start: 4; grid-column-end: 6;">
+          Social Network with GraphQL, Node.JS and MongoDB backend with a Dart (Flutter) frontend
+          <br>
+          Hedgehog vs Porcupine Image Classifier written in Matlab
+          <br>
+          An image detector for blurred, filtered, rotated and noisy images written in MatLab
+          <br>  
+          A line-following robot simulation built on the Webots engine, with control code in c
+          <br>
+          A robot simulation built on the Webots engine that used system dynamics to predict robot location, control code written in C and accuracy to 0.03 m
+          <br>
+          A path planning robot written in C, using a Graph-based Djikstra's search to reach locations on the map. Built on the Webots engine.
+          <br>
+          A robot simulation built on the Webots engine using a Discrete-Bayes filter to determine robot positioning from a random position and random configuration on a circular track
+        </h3>
+      </div>
+    </main>
+    <footer style="text-align: center; font-weight: 500;"> &copy; Sidney Nimako 2021</footer>
+
+
+  </body>
+
 
 </html>
