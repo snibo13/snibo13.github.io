@@ -152,7 +152,7 @@ img {
 
 .masonry {
     column-gap: 1.5vw;
-    column-fill: initial;
+    column-fill: revert;
 }
 
 .masonry img {
