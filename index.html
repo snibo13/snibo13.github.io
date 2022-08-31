@@ -1,351 +1,143 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-US" class="has-lab-nav-bottom lab-theme-light">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="index.css"> -->
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154968547-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="mason.css">
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+    </style>
 
-    gtag('config', 'UA-154968547-1');
-  </script>
-  <title>Sidney Nimako</title>
-  <style>
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    #links>a {
-      padding: 0vh 1vw;
-      
-    }
-
-    :root {
-      --dark-orange: #fb8b24ff;
-      --queen-blue: rgb(31, 108, 175);
-      --cmu-red: #c51230ff;
-      --green-munsell: rgb(10, 165, 118);
-      --midnight-green-eagle-green: rgb(27, 67, 119);
-      --oxford-blue: #011638;
-      --space-cadet: #2E294E;
-      --cadet-blue: #58A4B0;
-      --steel-teal: #607B7D;
-      --sweet-brown: #A63D40;
-    }
-/* 
-    .hover-box {
-    text-decoration: none;
-    color: inherit;
-    display: inline-block;
-    margin: 1vmin;
-    padding: 3px 5px;
-    -webkit-transition: all .25s ease-in-out;
-    -o-transition: all .25s ease-in-out;
-    transition: all .25s ease-in-out;
-    box-sizing: border-box;
-    box-shadow: inset 0 -2px 0 var(--cmu-red);
-  }
-
-  .hover-box:hover {
-    border-radius: 3px;
-    box-shadow: inset 0 -64px 0 0 var(--cmu-red);
-    color: white;
-  } */
-
-  html {
-    overflow-x: hidden;
-  }
-  #links > a
-  {
-    position: relative;
-  display: inline-block;
-  text-decoration: none;
-  text-align: center;
-  transition: 0.5s;
-  
-  }
-  #links > a::before {
-  position: absolute;
-  content: "";
-  
-  /* width: 3vw; */
-  width: 80%;
-  height: 3px;
-  /* left: -1px; */
-  top: 100%;
-  background: #ff7000;
-  transition: transform 0.5s;
-  transform: scaleX(0);
-  transform-origin: right;
-}
-#links > a:hover {
-  /* color: #95a5a6; */
-}
-#links > a:hover::before {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-  #head {
-    display:grid; grid-template-columns: 10vw 35vw 5vw 35vw 10vw; padding-top: 20vh; padding-bottom: 30vh;
-  }
-
-  #left {
-    grid-column-start: 2; font-size: 2.5vw; margin-right: 0; padding: 0.5vw; padding-bottom: 0; margin-bottom: 0; font-weight: 600;
-  }
-  #links {
-    font-weight: 600; text-align: center; grid-column-start: 2; font-size: 1.25vw;
-  }
-
-  #right {
-    grid-column-start: 4; font-size: 1.5vw; margin-left: 0; padding: 0.5vw; font-weight: 400;
-  }
-
-  #currently {
-    grid-column-start: 2;
-    grid-column-end: 5;
-    position: relative;
-    left: 15vw;
-    font-size: 1.25vw;
-    font-weight: 600;
-    padding-top: 5vh;
-    
-  }
-
-  #one-liners {
-    display: grid;
-    grid-template-columns: 10vw 25vw 5vw 25vw 12.5vw;
-  }
-
-  #one-liners > h1, h2, h3 {
-    line-height: 3vh;
-  }
-
-  .project {
-    display: grid; grid-template-columns: 30vw 10vw 40vw; padding-bottom: 4vh;
-  }
-
-  .project > img {
-    position: relative; width: 25vw; border-radius: 10px; height: auto;
-  }
-
-  .project > a {
-    font-weight: bold;
-  }
-  </style>
 </head>
 
-<body style=" font-family: 'Open Sans', sans-serif;">
-    <div id="head" >
-      <div id="left" style="">
-        Hello! I'm Sidney Nimako. &nbsp; I'm a Mechanical Engineering and Robotics Undergraduate @
-        <span id="cmu" style="color:var(--cmu-red)">Carnegie Mellon University</span>
-        <br>
-        <span id="links" style="">
-          <a class="hover-box" href="Resume.pdf"> Resume </a>
-          <a class="hover-box" href="http://github.com/snibo13">Github</a>
-          <a class="hover-box" href="http://linkedin.com/in/snibo">LinkedIn</a>
-          <a class="hover-box" href="mailto:snimakob@andrew.cmu.edu">Contact Me </a>
-        </span>
-      </div>
-      <div id="right" style="">
-        <p>
-          I am interested in <span id="robo" style="font-weight: 600; color:var(--queen-blue);">Robotics </span>, 
-          <span style="font-weight: 600; color:var(--green-munsell)"> Computer Science</span>, 
-          <span style="font-weight: 600; color:var(--midnight-green-eagle-green);"> Industrial Design</span> and 
-          <span style="font-weight: 600; color:var(--dark-orange);"> Game Development</span>.
-        </p>
-        <p>
-        Take a look at some of my in progress and completed projects down below and if you think I would be a 
-        good fit for your company or research group, feel free to reach out. Cheers!
-        </p>
-        
-      </div>
-      <div id="currently">
-        Currently: Looking for Research Positions for Spring 2022 and Internships for Summer 2022
-      </div>
-      
+<body>
+    <header>
+        <nav>
+            <span id="links">
+                <a href="Resume.pdf"> Resume </a>
+                <a href="http://github.com/snibo13">Github</a>
+                <a href="http://linkedin.com/in/snibo">LinkedIn</a>
+                <a href="mailto:snimakob@andrew.cmu.edu">Contact Me </a>
+            </span>
+        </nav>
+    </header>
+    <div id="head">
+        <div id="left">
+            Hello! I'm Sidney Nimako. <br> I'm a Mechanical Engineering and Robotics Undergraduate at
+            <br>
+            <span id="cmu" style="color:var(--cmu-red)">Carnegie Mellon University</span>
+            <br>
+            <br>
+
+        </div>
+        <div id="right" style="">
+            <p>
+                I am interested in <span id="robo">Robotics </span>,
+                <span id="cs"> Computer Science</span>,
+                <span id="id"> Industrial Design</span> and
+                <span id="gd"> Game Development</span>.
+            </p>
+            <p>
+                Take a look at some of my in progress and completed projects down below and if you think I would be a
+                good fit for your company or research group, feel free to reach out. Cheers!
+            </p>
+
+        </div>
+    </div>
+    <div id="currently">
+        Currently: Looking for Research Positions for Fall 2022 and Internships for Summer 2023
+    </div>
+    <div class="masonry-jar">
+        <div class="masonry">
+            <a href="http://projects.snibo.me/context-aware-object-recognition/"></a>
+            <div class="brick">
+                <div class="desc light-text">
+                    <p class="title"> Context-Aware Object Recognition <i class="fa-solid fa-arrow-right"></i></p>
+                    <p class="status">On Hold </p>
+                </div>
+                <img src="machine-learning.png" alt="Screenshot of code">
+            </div>
+            <a href="https://snibo.me/Robot_Kinematics_and_Dynamics.pdf">
+                <div class="brick">
+                    <div class="desc light-text">
+                        <p class="title">Robot Kinematics and Dynamics Capstone <i class="fa-solid fa-arrow-right"></i>
+                        </p>
+                        <p class="status">Complete (Winter 2021)</p>
+                    </div>
+                    <img src="Jenga.jpg" alt="Jenga bricks on a table">
+                </div>
+            </a>
+            <a href="http://projects.snibo.me/facebook-ai-research-internship">
+                <div class="brick">
+                    <div class="desc light-text">
+                        <p class="title">D'Manus Hand <i class="fa-solid fa-arrow-right"></i> </p>
+                        <p class="status">Complete (Summer 2021)</p>
+                    </div>
+                    <img src="D'Manus.jpg" alt="3-D printed robotic hand">
+                </div>
+            </a>
+
+            <a href="http://projects.snibo.me/wheelchair-conversion-kit">
+            <div class="brick">
+                <div class="desc dark-text">
+                    <p class="title">Wheelchair Conversion Kit <i class="fa-solid fa-arrow-right"></i></p>
+                    <p class="status">On Hold</p>
+                </div>
+                <img src="Wheelchair.jpg" alt="Wheelchair">
+            </div>
+            </a>
+            
+            <a href="http://projects.snibo.me/brevis">
+            <div class="brick">
+                <div class="desc light-text">
+                    <p class="title">Brevis Macropad <i class="fa-solid fa-arrow-right"></i></p>
+                    <p class="status">Complete (Summer 2021)</p>
+                </div>
+                <img src="BrevisFull.JPG" alt="7 Key keyboard with knob">
+            </div>
+            </a>
+            
+
+            <a href="http://projects.snibo.me/mobot-summary/">
+            <div class="brick">
+                <div class="desc light-text">
+                    <p class="title">Mobot <i class="fa-solid fa-arrow-right"></i></p>
+                    <p class="status">Complete (Winter 2020)</p>
+                </div>
+                <img src="Mobot1.jpeg" alt="Small arduino robot made of wood">
+            </div>
+            </a>
+
+        </div>
+
+        <div class="extra">
+            <h1 class="class">Smaller Projects</h1>
+            <ul>
+                <li>Social Network written with GraphQL, MongoDB, Typescript, Node.JS backend and Dart frontend
+                    App</li>
+                <li>Odometry system written in C with an accuracy of 0.03 m in the webots simulation engine</li>
+                <li>Path planning robot in C, using a Graph-based Djikstra's search algorithm in the webots
+                    simulation engine</li>
+                <li>Discrete-Bayes Localization system written in C, using the webots simulation enginve</li>
+                <li>Twitch Chat bot written in Typescript</li>
+                <li>Math puzzle game where you must reach a target number using the number 4 four times, written
+                    in Dart</li>
+                <li>Balancing Robot simulation using PID control methods and imitation learning written in
+                    Matlab</li>
+                <li>Acheivement system written with a GraphQL, MongoDB, Typescript, Node.js backend and interfacing with
+                    a Twitch Chat bot written in typescript</li>
+            </ul>
+            </p>
+        </div>
     </div>
 
-    <main style="padding-left: 10vw;">
-      <div class="project">
-        <img src="machine-learning.png" alt="">
-        <div style="grid-column-start: 3;">
-        <h1>Context-Aware Object Recogntion</h1>
-        <br>
-        <h2>August 2021 - Ongoing</h2>
-        <p>
-          Experimenting to see the impact of context detection on the accuracy of object recognition systems.
-        </p>
-        </div>
-      </div>
-      <!-- <div class="project">
-        <img src="machine-learning.png" alt="">
-        <div style="grid-column-start: 3;">
-        <h1>Augmented Reality Sysem</h1>
-        <br>
-        <h2>November 2021 - Ongoing</h2>
-        <p>
-          Developing a ground up augmented reality system using OpenCV, OpenGL and Machine Learning technologies
-        </p>
-        </div>
-      </div> -->
-      <!-- <div class="project">
-        <img src="machine-learning.png" alt="">
-        <div style="grid-column-start: 3;">
-        <h1>SK8 NFTs</h1>
-        <br>
-        <h2>January 2022 - Ongoing</h2>
-        <p>
-          Blender based NFT collection of animated skateboards with handcrafted art
-        </p>
-        </div>
-      </div> -->
-      <!-- <div class="project">
-        <img src="machine-learning.png" alt="">
-        <div style="grid-column-start: 3;">
-        <h1>Context-Aware Object Recogntion</h1>
-        <br>
-        <h2>January 2022 - Ongoing</h2>
-        <p>
-          Experimenting to see the impact of context detection on the accuracy of object recognition systems.
-        </p>
-        </div>
-      </div> -->
-      <div class="project">
-        <img src="Jenga.jpg" alt="">
-        <div style="grid-column-start: 3;">
-        <h1>Robotics Kinematics and Dynamics Capstone</h1>
-        <br>
-        <h2>November 2021 - December 2021</h2>
-        <p>
-          Developed a control system for a Hebi robotic arm to build a Jenga tower, created the fastest system in the course.
-        </p>
-        <a href="Robot_Kinematics_and_Dynamics.pdf">Read more</a>
-        </div>
-      </div>
-      <div class="project">
-        <img src="Wheelchair.jpg" alt="">
-        <div style="grid-column-start: 3;">
-        <h1>Wheelchair Conversion Kit</h1>
-        <br>
-        <h2>December 2021 - Ongoing</h2>
-        <p>
-          Designing an post-hoc wheelchair conversion kit designed to allow traditional wheelchairs to be motorized while maintaining portability and not increasing cost too drastically.
-        </p>
-        </div>
-      </div>
-      
-      <div class="project">
-        <img src="D'Manus.jpg">
-        <div style="grid-column-start: 3">
-        <h1>D'Manus Hand</h1>
-        <br>
-        <h2>May 2021 - August 2021</h2>
-        <p>
-          I worked with Facebook AI Research (FAIR) and CMU's Robotics Institute on a dexterous 3-digit robotic hand.
-        </p>
-        <a href="http://projects.snibo.me/facebook-ai-research-internship">Read More</a>
-        </div>
-      </div>
-      <div class="project" style="">
-        <img src="BrevisFull.JPG" alt="" style="">
-        <div style="grid-column-start: 3;">
-        <h1>Brevis Macro Keypad</h1>
-        <br>
-        <h2>February 2021</h2>
-        <p>
-          I designed the PCB and firmware for a seven key macropad with a rotary encoder.
-        </p>
-        <a href="http://projects.snibo.me/brevis">Read More</a>
-        </div>
-      </div>
-      <div class="project" style="">
-        <img src="Notes For Terminal.png" alt="" style="">
-        <div style="grid-column-start: 3;">
-        <h1>Notes For Terminal</h1>
-        <br>
-        <h2>June 2020</h2>
-        <p>
-          A Simple Notes App that lives entirely in the terminal written in C
-        </p>
-        <a href="https://github.com/snibo13/Notes-for-Terminal">Read More</a>
-        </div>
-      </div>
-      
-      <!-- <div class="project" style="">
-        <img src="" alt="" style="">
-        <div style="grid-column-start: 3;">
-          Homework 4
-        <h1>Self-Balancing Bot Simulation</h1>
-        <br>
-        <h2>Spring 2021</h2>
-        <p>
-          As part of the Introduction to Robotics course, we wrote code for self-balancing robots on several occasions. One based on the PID control method and a second based on a machine learning model that first imitated a PID controller and then expanded on it to optimize the balance.
-        </p>
-        <a href="https://github.com/snibo13/Notes-for-Terminal">Read More</a>
-        </div>
-      </div> -->
-      
-      <div class="project" style="">
-        <img src="Mobot1.jpeg" alt="" style="">
-        <div style="grid-column-start: 3;">
-          <!-- Homework 4 -->
-        <h1>Mobot</h1>
-        <br>
-        <h2>Winter 2020</h2>
-        <p>
-          An arduino-based robot built as a project for Fundamentals of Engineering, used a PID based control scheme to follow a line.
-        </p>
-        <a href="http://projects.snibo.me/mobot-summary/">Read More</a>
-        </div>
-      </div>
-      <div id="one-liners">
-        <h1 style="grid-column-start:2; text-align: right;">One-Liners</h1>
-        <h3 style= "grid-column-start: 4;">Some smaller projects that are simple or I can't go into more detail on</h3>
-        <br>
-        <h2 style="grid-column-start: 2; text-align: right;">
-          Stealth Social Network (Ongoing)
-          <br>
-          <br>
-          <br>
-          Odometry in Simulation(Spring 2021)
-          <br>
-          <br>
-          <br>
-          <br>
-          Path Planning Robot (Spring 2021)
-          <br>
-          <br>
-          <br>
-          Localization (Spring 2021)
-        </h2>
-        <h3 style="grid-column-start: 4; grid-column-end: 6; line-height: 2;">
-          Social Network with GraphQL, Node.JS and MongoDB backend with a Dart (Flutter) frontend
-          <br>
-          
-          A robot simulation built on the Webots engine that used system dynamics to predict robot location, control code written in C and accuracy to 0.03 m
-          <br>
-          <br>
-          A path planning robot written in C, using a Graph-based Djikstra's search to reach locations on the map. Built on the Webots engine.
-          <br>
-          <br>
-          A robot simulation built on the Webots engine using a Discrete-Bayes filter to determine robot positioning from a random position and random configuration on a circular track
-        </h3>
-      </div>
-    </main>
-    <footer style="text-align: center; font-weight: 500;"> &copy; Sidney Nimako 2021</footer>
-
-
-  </body>
-
+    </div>
+</body>
 
 </html>
+<!-- Page generated by LiteSpeed Cache 4.6 on 2022-08-25 08:10:13 -->

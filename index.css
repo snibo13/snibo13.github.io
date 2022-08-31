@@ -156,24 +156,7 @@
     text-align: left;
   }
 
-  .hover-box {
-    text-decoration: none;
-    color: inherit;
-    display: inline-block;
-    margin: 1vmin;
-    padding: 3px 5px;
-    -webkit-transition: all .25s ease-in-out;
-    -o-transition: all .25s ease-in-out;
-    transition: all .25s ease-in-out;
-    box-sizing: border-box;
-    box-shadow: inset 0 -2px 0 var(--cmu-red);
-  }
 
-  .hover-box:hover {
-    border-radius: 3px;
-    box-shadow: inset 0 -64px 0 0 var(--cmu-red);
-    color: white;
-  }
 
   #projects-title {
     grid-column-start: 2;
