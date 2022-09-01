@@ -16,163 +16,172 @@
 </head>
 
 <body>
-    <header>
-        <nav>
-            <span id="links">
-                <a href="Resume.pdf"> Resume </a>
-                <a href="http://github.com/snibo13">Github</a>
-                <a href="http://linkedin.com/in/snibo">LinkedIn</a>
-                <a href="mailto:snimakob@andrew.cmu.edu">Contact Me </a>
-            </span>
-        </nav>
-    </header>
-    <div id="head">
-        <div id="left">
-            Hello! I'm Sidney Nimako. <br> I'm a Mechanical Engineering and Robotics Undergraduate at
-            <br>
-            <span id="cmu" style="color:var(--cmu-red)">Carnegie Mellon University</span>
-            <br>
-            <br>
+    <article class="slider">
+        <section class="masthead">
+            <header>
+                <nav>
+                    <span id="links">
+                        <a href="Resume.pdf"> Resume </a>
+                        <a href="http://github.com/snibo13">Github</a>
+                        <a href="http://linkedin.com/in/snibo">LinkedIn</a>
+                        <a href="mailto:snimakob@andrew.cmu.edu">Contact Me </a>
+                    </span>
+                </nav>
+            </header>
+            <div id="head">
+                <div id="left">
+                    Hello! I'm Sidney Nimako. <br> I'm a Mechanical Engineering and Robotics Undergraduate at
+                    <br>
+                    <span id="cmu" style="color:var(--cmu-red)">Carnegie Mellon University</span>
+                    <br>
+                    <br>
 
+                </div>
+                <div id="right">
+                    <p>
+                        I am interested in <span id="robo">Robotics </span>,
+                        <span id="cs"> Computer Science</span>,
+                        <span id="id"> Industrial Design</span> and
+                        <span id="gd"> Game Development</span>.
+                    </p>
+                    <p>
+                        Take a look at some of my in progress and completed projects down below and if you think I would
+                        be a
+                        good fit for your company or research group, feel free to reach out. Cheers!
+                    </p>
+
+                </div>
+                <div id="currently">
+                    <b>Currently:</b> &nbsp; Looking for Research Positions for Fall 2022 and Internships for Summer 2023
+                    <br>
+                    <br>
+                    <b>Previously:</b> &nbsp; Hardware Engineering Intern @ DoorDash Labs, Robotics Researcher @ Meta AI
+                    Research
+                </div>
+            </div>
+            
+
+        </section>
+        <section class="masonry-jar">
+            <h1 id="projects-title">Projects</h1>
+
+            <div class="masonry">
+
+                <a href="https://snibo.me/Robot_Kinematics_and_Dynamics.pdf">
+                    <div class="brick">
+                        <div class="desc light-text">
+                            <p class="title">Robot Kinematics and Dynamics Capstone <i
+                                    class="fa-solid fa-arrow-right"></i>
+                            </p>
+                            <p class="status">Complete (Winter 2021)</p>
+                        </div>
+                        <img src="Jenga.jpg" alt="Jenga bricks on a table">
+                    </div>
+                </a>
+
+                <a href="http://projects.snibo.me/facebook-ai-research-internship">
+                    <div class="brick">
+                        <div class="desc light-text">
+                            <p class="title">D'Manus Hand <i class="fa-solid fa-arrow-right"></i> </p>
+                            <p class="status">Complete (Summer 2021)</p>
+                        </div>
+                        <img src="D'Manus.jpg" alt="3-D printed robotic hand">
+                    </div>
+                </a>
+
+
+
+                <a href="http://projects.snibo.me/mobot-summary/">
+                    <div class="brick">
+                        <div class="desc light-text">
+                            <p class="title">Mobot <i class="fa-solid fa-arrow-right"></i></p>
+                            <p class="status">Complete (Winter 2020)</p>
+                        </div>
+                        <img src="Mobot1.jpeg" alt="Small arduino robot made of wood">
+                    </div>
+                </a>
+
+                <a href="http://projects.snibo.me/brevis">
+                    <div class="brick">
+                        <div class="desc light-text">
+                            <p class="title">Brevis Macropad <i class="fa-solid fa-arrow-right"></i></p>
+                            <p class="status">Complete (Summer 2021)</p>
+                        </div>
+                        <img src="BrevisFull.JPG" alt="7 Key keyboard with knob">
+                    </div>
+                </a>
+
+                <a href="http://projects.snibo.me/context-aware-object-recognition/">
+                    <div class="brick">
+                        <div class="desc light-text">
+                            <p class="title"> Context-Aware Object Recognition <i class="fa-solid fa-arrow-right"></i>
+                            </p>
+                            <p class="status">On Hold </p>
+                        </div>
+                        <img src="machine-learning.png" alt="Screenshot of code">
+                    </div>
+                </a>
+
+
+                <a href="http://projects.snibo.me/wheelchair-conversion-kit">
+                    <div class="brick">
+                        <div class="desc dark-text">
+                            <p class="title">Wheelchair Conversion Kit <i class="fa-solid fa-arrow-right"></i></p>
+                            <p class="status">On Hold</p>
+                        </div>
+                        <img src="Wheelchair.jpg" alt="Wheelchair">
+                    </div>
+                </a>
+
+                <!-- <div class="brick">
+                    <div class="desc dark-text" >
+                        <p class="title">Eye-Tracking System</p>
+                        <p class="status">In Progress</p>        
+                    </div>
+                    <img src="" alt="Johns Hopkins Logo">
+                </div> -->
+
+            </div>
+
+            <section id="extra">
+                <h1>Smaller Projects</h1>
+                <ul>
+                    <img class="bullet" src="squircle.svg" alt="">
+                    <li>Social Network written with GraphQL, MongoDB, Typescript, Node.JS backend and Dart frontend
+                        App</li>
+                    <br>
+                    <img class="bullet" src="squircle.svg" alt="">
+                    <li>Odometry system written in C with an accuracy of 0.03 m in the webots simulation engine</li>
+                    <br>
+                    <img class="bullet" src="squircle.svg" alt="">
+                    <li>Path planning robot in C, using a Graph-based Djikstra's search algorithm in the webots
+                        simulation engine</li>
+                    <br>
+                    <img class="bullet" src="squircle.svg" alt="">
+                    <li>Discrete-Bayes Localization system written in C, using the webots simulation enginve</li>
+                    <br>
+                    <img class="bullet" src="squircle.svg" alt="">
+                    <li>Twitch Chat bot written in Typescript</li>
+                    <br>
+                    <img class="bullet" src="squircle.svg" alt="">
+                    <li>Math puzzle game where you must reach a target number using the number 4 four times, written
+                        in Dart</li>
+                    <br>
+                    <img class="bullet" src="squircle.svg" alt="">
+                    <li>Balancing Robot simulation using PID control methods and imitation learning written in
+                        Matlab</li>
+                    <br>
+                    <img class="bullet" src="squircle.svg" alt="">
+                    <li>Acheivement system + Chatbot written with a GraphQL, MongoDB, Typescript and Node.js</li>
+                </ul>
+            </section>
+        </section>
+
+        <footer>
+            &copy; Sidney Nimako 2022-2023
+        </footer>
         </div>
-        <div id="right">
-            <p>
-                I am interested in <span id="robo">Robotics </span>,
-                <span id="cs"> Computer Science</span>,
-                <span id="id"> Industrial Design</span> and
-                <span id="gd"> Game Development</span>.
-            </p>
-            <p>
-                Take a look at some of my in progress and completed projects down below and if you think I would be a
-                good fit for your company or research group, feel free to reach out. Cheers!
-            </p>
 
-        </div>
-    </div>
-    <div id="currently">
-        <b>Currently:</b> &nbsp; Looking for Research Positions for Fall 2022 and Internships for Summer 2023
-        <br>
-        <br>
-        <b>Previously:</b> &nbsp; Hardware Engineering Intern @ DoorDash Labs, Robotics Researcher @ Meta AI Research
-    </div>
-    <div class="masonry-jar">
-        <h1 id="projects-title">Projects</h1>
-
-        <div class="masonry">
-
-            <a href="https://snibo.me/Robot_Kinematics_and_Dynamics.pdf">
-                <div class="brick">
-                    <div class="desc light-text">
-                        <p class="title">Robot Kinematics and Dynamics Capstone <i class="fa-solid fa-arrow-right"></i>
-                        </p>
-                        <p class="status">Complete (Winter 2021)</p>
-                    </div>
-                    <img src="Jenga.jpg" alt="Jenga bricks on a table">
-                </div>
-            </a>
-
-            <a href="http://projects.snibo.me/facebook-ai-research-internship">
-                <div class="brick">
-                    <div class="desc light-text">
-                        <p class="title">D'Manus Hand <i class="fa-solid fa-arrow-right"></i> </p>
-                        <p class="status">Complete (Summer 2021)</p>
-                    </div>
-                    <img src="D'Manus.jpg" alt="3-D printed robotic hand">
-                </div>
-            </a>
-
-
-
-            <a href="http://projects.snibo.me/mobot-summary/">
-                <div class="brick">
-                    <div class="desc light-text">
-                        <p class="title">Mobot <i class="fa-solid fa-arrow-right"></i></p>
-                        <p class="status">Complete (Winter 2020)</p>
-                    </div>
-                    <img src="Mobot1.jpeg" alt="Small arduino robot made of wood">
-                </div>
-            </a>
-
-            <a href="http://projects.snibo.me/brevis">
-                <div class="brick">
-                    <div class="desc light-text">
-                        <p class="title">Brevis Macropad <i class="fa-solid fa-arrow-right"></i></p>
-                        <p class="status">Complete (Summer 2021)</p>
-                    </div>
-                    <img src="BrevisFull.JPG" alt="7 Key keyboard with knob">
-                </div>
-            </a>
-
-            <a href="http://projects.snibo.me/context-aware-object-recognition/">
-                <div class="brick">
-                    <div class="desc light-text">
-                        <p class="title"> Context-Aware Object Recognition <i class="fa-solid fa-arrow-right"></i></p>
-                        <p class="status">On Hold </p>
-                    </div>
-                    <img src="machine-learning.png" alt="Screenshot of code">
-                </div>
-            </a>
-
-
-            <a href="http://projects.snibo.me/wheelchair-conversion-kit">
-                <div class="brick">
-                    <div class="desc dark-text">
-                        <p class="title">Wheelchair Conversion Kit <i class="fa-solid fa-arrow-right"></i></p>
-                        <p class="status">On Hold</p>
-                    </div>
-                    <img src="Wheelchair.jpg" alt="Wheelchair">
-                </div>
-            </a>
-
-            <!-- <div class="brick">
-                <div class="desc dark-text" >
-                    <p class="title">Eye-Tracking System</p>
-                    <p class="status">In Progress</p>        
-                </div>
-                <img src="" alt="Johns Hopkins Logo">
-            </div> -->
-
-        </div>
-
-        <div id="extra">
-            <h1>Smaller Projects</h1>
-            <ul>
-                <img class="bullet" src="squircle.svg" alt="">
-                <li>Social Network written with GraphQL, MongoDB, Typescript, Node.JS backend and Dart frontend
-                    App</li>
-                <br>
-                <img class="bullet" src="squircle.svg" alt="">
-                <li>Odometry system written in C with an accuracy of 0.03 m in the webots simulation engine</li>
-                <br>
-                <img class="bullet" src="squircle.svg" alt="">
-                <li>Path planning robot in C, using a Graph-based Djikstra's search algorithm in the webots
-                    simulation engine</li>
-                <br>
-                <img class="bullet" src="squircle.svg" alt="">
-                <li>Discrete-Bayes Localization system written in C, using the webots simulation enginve</li>
-                <br>
-                <img class="bullet" src="squircle.svg" alt="">
-                <li>Twitch Chat bot written in Typescript</li>
-                <br>
-                <img class="bullet" src="squircle.svg" alt="">
-                <li>Math puzzle game where you must reach a target number using the number 4 four times, written
-                    in Dart</li>
-                <br>
-                <img class="bullet" src="squircle.svg" alt="">
-                <li>Balancing Robot simulation using PID control methods and imitation learning written in
-                    Matlab</li>
-                <br>
-                <img class="bullet" src="squircle.svg" alt="">
-                <li>Acheivement system + Chatbot written with a GraphQL, MongoDB, Typescript and Node.js</li>
-            </ul>
-            </p>
-        </div>
-    </div>
-
-    </div>
-    <footer>
-        &copy; Sidney Nimako 2022-2023
-    </footer>
 </body>
 
 </html>
