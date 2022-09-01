@@ -55,8 +55,9 @@ header {
 #head {
     display: grid;
     grid-template-columns: 15vw 30vw 5vw 30vw 15vw;
-    padding-top: 10vh;
-    padding-bottom: 5vh;
+    height: 50vh;
+    padding-top: 25vh;
+    /* padding-bottom: 5vh; */
 }
 
 a {
@@ -102,6 +103,8 @@ a {
 }
 
 #left {
+    position: relative;
+    top: 4vh;
     grid-column-start: 2;
     font-size: 2vw;
     margin-right: 0;
@@ -109,6 +112,7 @@ a {
     padding-bottom: 0;
     margin-bottom: 0;
     font-weight: 600;
+    line-height: 1.5em;
 }
 
 #cmu {
@@ -130,10 +134,12 @@ a {
 
 #currently {
     position: relative;
-    text-align: center;
+    left: 15vw;
+    width: 70vw;
+    /* text-align: center; */
     font-size: 1.25vw;
     /* font-weight: 600; */
-    padding-bottom: 5vh;
+    padding-bottom: 20vh;
 }
 
 .masonry-jar {
@@ -143,6 +149,12 @@ a {
     padding-right: 5vw;
     padding-left: 5vw;
     max-width: 1080px;
+}
+
+#projects-title {
+    position: relative;
+    left: -40px;
+    font-size: 60px;
 }
 
 img {
@@ -288,6 +300,7 @@ footer {
     text-align: center;
     font-size: 20px;
 }
+
 
 /* Responsive */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
