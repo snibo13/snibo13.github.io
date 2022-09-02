@@ -290,6 +290,7 @@ img {
 
 #extra ul {
     padding-left: 0;
+    list-style-type: none;
 }
 
 #extra ul li {
