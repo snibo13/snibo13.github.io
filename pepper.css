@@ -1,0 +1,41 @@
+body {
+    display: grid;
+    grid-template-columns: 10vw auto 5vw auto 10vw;
+    grid-template-rows: 20vh 60vh 20vh;
+    margin: 0;
+}
+
+#participant-tip {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+#pepper-tip {
+    grid-column-start: 4;
+    grid-row-start: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+#header {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    text-align: center;
+    grid-row-start: 1;
+}
+
+h1 {
+    font-size: 4vw;
+}
+
+h2 {
+    font-size: 3vw;
+}
