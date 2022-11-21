@@ -39,3 +39,27 @@ h1 {
 h2 {
     font-size: 3vw;
 }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F4F4F9;
+    background-color: rgb(197, 246, 201);
+}
+
+div {
+    margin: 2vh;
+    padding: 0vh 1vw;
+    /* border: 3px solid rgb(197, 246, 201); */
+    border-radius: 5px;
+}
+
+#header {
+    /* color: #2F4550; */
+    color: black;
+}
+
+.cond {
+    background-color: #59CD90;
+    /* color: rgb(197, 246, 201); */
+    color: white;
+}
