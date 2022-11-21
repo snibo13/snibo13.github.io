@@ -3,10 +3,6 @@
 
 <head>
     <style>
-        body {
-            background-color: rgb(218, 235, 245);
-        }
-
         .button {
             border: none;
             color: white;
@@ -58,27 +54,11 @@
             top: 30vh;
 
         }
-
-        #full {
-            margin: auto;
-            text-align: center;
-            font-family: 'Dancing Script', serif;
-            font-size: 10vh;
-            height: 100vh;
-            color: whitesmoke;
-        }
     </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div id="full">
-        <h1 style="position: relative; top: 40vh;">Welcome!</h1>
-    </div>
     <div id="container">
-
         <h1>How Would You Like to Allocate Your Tips?</h1>
 
         <!-- <p>Use the :hover selector to change the style of the button when you move the mouse over it.</p>
