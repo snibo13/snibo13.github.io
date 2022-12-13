@@ -11,6 +11,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
     </style>
+    <link rel="icon" href="Logo.png">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154968547-1"></script>
     <!-- Google tag (gtag.js) -->
@@ -22,12 +23,23 @@
 
         gtag('config', 'G-7TVZ77RXFX');
     </script>
+    <style>
+        #logo {
+            position: absolute;
+            left: 5vw;
+            top: 2vh;
+            padding-right: 10vw;
+        }
+    </style>
 </head>
 
 <body>
     <article class="slider">
         <section class="masthead">
             <header>
+                <div id="logo">
+                    <img src="Logo.png" alt="" width="75vw">
+                </div>
                 <nav>
                     <span id="links">
                         <a href="Resume.pdf"> Resume </a>
@@ -38,7 +50,27 @@
                 </nav>
             </header>
             <div id="head">
-                <div id="left">
+                <div id="center">
+                    Sidney Nimako.
+                    <br>
+                    I'm a Mechanical Engineering and Robotics undergraduate at
+                    <br>
+                    <span id="cmu" style="color:var(--cmu-red)">Carnegie Mellon University</span>
+                    <br>
+                    <p>
+                        I am interested in <span id="robo">Robotics </span>,
+                        <span id="cs"> Computer Science</span>,
+                        <span id="id"> Industrial Design</span> and
+                        <span id="gd"> Game Development</span>.
+                    </p>
+                    <p>
+                        Take a look at some of my in progress and completed projects down below and if you think I would
+                        be a
+                        good fit for your company or research group, feel free to reach out. Cheers!
+                    </p>
+
+                </div>
+                <!-- <div id="left">
                     Hello! I'm Sidney Nimako. <br> I'm a Mechanical Engineering and Robotics Undergraduate at
                     <br>
                     <span id="cmu" style="color:var(--cmu-red)">Carnegie Mellon University</span>
@@ -59,7 +91,7 @@
                         good fit for your company or research group, feel free to reach out. Cheers!
                     </p>
 
-                </div>
+                </div> -->
                 <div id="currently">
                     <b>Currently:</b> &nbsp; Looking for Research Positions for Fall 2022 and Internships for Summer
                     2023
@@ -153,27 +185,34 @@
 
             <h1>Smaller Projects</h1>
             <ul>
-                
-                <li> <img class="bullet" src="squircle.svg" alt="">Social Network written with GraphQL, MongoDB, Typescript, Node.JS backend and Dart frontend
+
+                <li> <img class="bullet" src="squircle.svg" alt="">Social Network written with GraphQL, MongoDB,
+                    Typescript, Node.JS backend and Dart frontend
                     App</li>
                 <br>
-                
-                <li><img class="bullet" src="squircle.svg" alt="">Odometry system written in C with an accuracy of 0.03 m in the webots simulation engine</li>
+
+                <li><img class="bullet" src="squircle.svg" alt="">Odometry system written in C with an accuracy of 0.03
+                    m in the webots simulation engine</li>
                 <br>
-                <li><img class="bullet" src="squircle.svg" alt="">Path planning robot in C, using a Graph-based Djikstra's search algorithm in the webots
+                <li><img class="bullet" src="squircle.svg" alt="">Path planning robot in C, using a Graph-based
+                    Djikstra's search algorithm in the webots
                     simulation engine</li>
                 <br>
-                <li> <img class="bullet" src="squircle.svg" alt="">Discrete-Bayes Localization system written in C, using the webots simulation engine</li>
+                <li> <img class="bullet" src="squircle.svg" alt="">Discrete-Bayes Localization system written in C,
+                    using the webots simulation engine</li>
                 <br>
                 <li> <img class="bullet" src="squircle.svg" alt="">Twitch Chat bot written in Typescript</li>
                 <br>
-                <li> <img class="bullet" src="squircle.svg" alt="">Math puzzle game where you must reach a target number using the number 4 four times, written
+                <li> <img class="bullet" src="squircle.svg" alt="">Math puzzle game where you must reach a target number
+                    using the number 4 four times, written
                     in Dart</li>
                 <br>
-                <li> <img class="bullet" src="squircle.svg" alt="">Balancing Robot simulation using PID control methods and imitation learning written in
+                <li> <img class="bullet" src="squircle.svg" alt="">Balancing Robot simulation using PID control methods
+                    and imitation learning written in
                     Matlab</li>
                 <br>
-                <li> <img class="bullet" src="squircle.svg" alt="">Acheivement system + Chatbot written with a GraphQL, MongoDB, Typescript and Node.js</li>
+                <li> <img class="bullet" src="squircle.svg" alt="">Acheivement system + Chatbot written with a GraphQL,
+                    MongoDB, Typescript and Node.js</li>
             </ul>
         </section>
 
