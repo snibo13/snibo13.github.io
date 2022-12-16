@@ -23,6 +23,11 @@
 
         gtag('config', 'G-7TVZ77RXFX');
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Libre+Baskerville&family=Merriweather&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --dark-white: #efedec;
@@ -52,12 +57,13 @@
             width: 60vw;
             /* padding-top: 5vh;
             padding-right: 5vh; */
-            margin: 0px;
-            margin-bottom: 30vh;
+            /* margin: 0px; */
+            /* margin-bottom: 30vh; */
             overflow: hidden;
 
             display: grid;
-            grid-template-rows: 35vh 5vh;
+            grid-template-rows: 35vh;
+            /* 5vh; */
             place-items: center;
 
         }
@@ -277,27 +283,46 @@
         }
 
         #RKD {
-            height: 514px;
             height: 45vh;
         }
 
+        #Brevis {
+            height: 40vh;
+        }
+
+        #Mobot {
+            height: 40vh;
+        }
+
+        #CAOO {
+            height: 20vh;
+        }
+
+        #WCK {
+            height: 60vh;
+        }
+
+        .contrast-dark {
+            color: #5876A2;
+        }
+
         .proj-desc {
-            font-family: serif;
+            font-family: 'Inconsolata', monospace;
             width: 80%;
+            backdrop-filter: blur(1px);
+            position: relative;
+            top: -2vh;
+            padding: 2vh;
+
         }
     </style>
 </head>
 
 <body>
     <header id="bar">
-        <div id="left">
+        <div id="right">
             <img src="Logo.png" alt="" width="75vw">
         </div>
-        <!-- <div id="right">
-            <a href="Resume.pdf"> RESUME </a>
-            <a href="http://github.com/snibo13">GITHUB</a>
-            <a href="mailto:snimakob@andrew.cmu.edu">CONTACT</a>
-        </div> -->
     </header>
     <div id="masthead">
         <span id="name-one">Sidney</span>
@@ -339,10 +364,9 @@
                         <br>
                         <p class="proj-desc">
                             Control design and software for a Hebi module based robot to build a Jenga Tower as part of
-                            CMU's Robot Kinematics and Dynamics Course
+                            CMU's Robot Kinematics and Dynamics Course.
                         </p>
                     </div>
-                    <!-- <img src="Jenga.jpg" alt="Jenga bricks on a table"> -->
                 </div>
             </a>
 
@@ -351,52 +375,65 @@
                     <div class="desc light-text">
                         <p class="title">D'Manus Hand <i class="fa-solid fa-arrow-right"></i> </p>
                         <p class="status">Complete (Summer 2021)</p>
+                        <p class="proj-desc">
+                            My work on the D'Manus, an open-source prehensile robotic hand, while interning at Facebook
+                            AI research.
+                        </p>
                     </div>
-                    <!-- <img src="D'Manus.jpg" alt="3-D printed robotic hand"> -->
                 </div>
             </a>
 
 
 
             <a href="http://projects.snibo.me/mobot-summary/">
-                <div class="brick">
+                <div class="brick" id="Mobot" style="background-image: url('Mobot1.jpeg');">
                     <div class="desc light-text">
                         <p class="title">Mobot <i class="fa-solid fa-arrow-right"></i></p>
                         <p class="status">Complete (Winter 2020)</p>
+                        <p class="proj-desc">
+                            A line following robot created for my freshman Introdution to Mechanical Engineering course.
+                        </p>
                     </div>
-                    <img src="Mobot1.jpeg" alt="Small arduino robot made of wood">
                 </div>
             </a>
 
             <a href="http://projects.snibo.me/brevis">
-                <div class="brick">
+                <div class="brick" id="Brevis" style="background-image: url('BrevisFull.JPG');">
                     <div class="desc light-text">
                         <p class="title">Brevis Macropad <i class="fa-solid fa-arrow-right"></i></p>
                         <p class="status">Complete (Summer 2021)</p>
+                        <p class="proj-desc">
+                            A custom macropad I created as an excercise is electronics development.
+                        </p>
                     </div>
-                    <img src="BrevisFull.JPG" alt="7 Key keyboard with knob">
                 </div>
             </a>
 
             <a href="http://projects.snibo.me/context-aware-object-recognition/">
-                <div class="brick">
+                <div class="brick" id="CAOO" style="background-image: url('machine-learning.png');">
                     <div class="desc light-text">
                         <p class="title"> Context-Aware Object Recognition <i class="fa-solid fa-arrow-right"></i>
                         </p>
                         <p class="status">On Hold </p>
+                        <p class="proj-desc">
+                            An exploration into machine learning, trying to leverage scene context to improve accuracy
+                            of high speed object recognition systems.
+                        </p>
                     </div>
-                    <img src="machine-learning.png" alt="Screenshot of code">
                 </div>
             </a>
 
 
             <a href="http://projects.snibo.me/wheelchair-conversion-kit">
-                <div class="brick">
+                <div class="brick" id="WCK" style="background-image: url('Wheelchair.jpg');">
                     <div class="desc dark-text">
                         <p class="title">Wheelchair Conversion Kit <i class="fa-solid fa-arrow-right"></i></p>
                         <p class="status">On Hold</p>
+                        <p class="proj-desc contrast-dark">
+                            Trying to design a low cost motorised wheelchair conversion kit, to counteract the high cost
+                            and lack of insurance coverage.
+                        </p>
                     </div>
-                    <img src="Wheelchair.jpg" alt="Wheelchair">
                 </div>
             </a>
 
