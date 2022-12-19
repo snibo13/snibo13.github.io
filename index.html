@@ -38,6 +38,7 @@
             --shamrock: #66A182;
             --madder: #C3423F;
             --greh: #a5a5a7;
+            --zomp: #2CA58D;
         }
 
 
@@ -62,7 +63,7 @@
             overflow: hidden;
 
             display: grid;
-            grid-template-rows: 35vh;
+            grid-template-rows: 25vh 25vh 10vh;
             /* 5vh; */
             place-items: center;
 
@@ -101,12 +102,14 @@
         #name-one {
             display: inline;
             position: relative;
+            top: 10vh;
             left: 3vw;
             width: 60vw;
-            font-size: 9vw;
+            font-size: 7.5vw;
             font-family: 'Josefin Sans', sans-serif;
             margin-bottom: 0;
             padding-bottom: 0;
+            /* color: var(--madder) */
         }
 
         #name-two {
@@ -239,13 +242,18 @@
         }
 
         #icons {
-            position: absolute;
-            top: 40vh;
-            right: 5vw;
-            height: 50vh;
+            grid-row-start: 3;
+            /* position: absolute; */
+            /* top: 40vh; */
+            /* right: 5vw; */
+            /* height: 50vh; */
+            position: relative;
+            left: -43%;
+            top: -5vh;
+            width: 20%;
             color: var(--madder);
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
         }
 
@@ -315,6 +323,10 @@
             padding: 2vh;
 
         }
+
+        #cmu {
+            color: var(--madder);
+        }
     </style>
 </head>
 
@@ -325,10 +337,9 @@
         </div>
     </header>
     <div id="masthead">
-        <span id="name-one">Sidney</span>
-        <span id="name-two">Nimako</span>
+        <span id="name-one">Sidney Nimako</span>
         <div id="bio">
-            I'm a mechanical engineering undergraduate at Carnegie Mellon University.
+            I'm a mechanical engineering undergraduate at <span id="cmu">Carnegie Mellon University.</span>
             <br>
             My research interests are in human-robot interaction, assistive robotics and manipulation.
             <br>
@@ -336,18 +347,18 @@
             <br>
             Previously: @ DoorDash Labs, Meta AI Research
         </div>
+        <div id="icons">
+            <a href="">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="">
+                <i class="fa-solid fa-paperclip"></i>
+            </a>
+        </div>
 
-    </div>
-    <div id="icons">
-        <a href="">
-            <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="">
-            <i class="fa-solid fa-envelope"></i>
-        </a>
-        <a href="">
-            <i class="fa-solid fa-paperclip"></i>
-        </a>
     </div>
 
     <section class="masonry-jar">
