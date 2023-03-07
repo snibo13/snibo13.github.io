@@ -33,6 +33,12 @@ function setup() {
     let xd0_input = createInput('0')
     xd0_input.position(0, 150)
     xd0_input.input(updateVel);
+    let k_input = createInput('2')
+    k_input.position(0, 200)
+    k_input.input(updateK);
+    let c_input = createInput('0.5')
+    c_input.position(0, 250)
+    c_input.input(updateC);
 
     // Simulation stuff
     m = 10; //kg
@@ -58,6 +64,8 @@ function drawInputText() {
     text("Mass", 0, 40);
     text("x0", 0, 95);
     text("v0", 0, 145);
+    text("k", 0, 195);
+    text("c", 0, 245);
 }
 
 
@@ -68,6 +76,14 @@ function updateMass() {
 
 function updateVel() {
     x_dot0 = float(this.value());
+}
+
+function updateK() {
+    k = float(this.value());
+}
+
+function updateC() {
+    c = float(this.value());
 }
 function updatePos() {
     x = this.value();
@@ -199,4 +215,4 @@ function draw() {
     draw_wall(mass_x + 50, mass_y + 50, 200)
 
 
-} t
+}
