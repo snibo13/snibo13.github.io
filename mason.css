@@ -172,6 +172,10 @@ img {
     vertical-align: middle;
 }
 
+@media only screen and (max-width: 640px) {
+    .masonry
+}
+
 .masonry {
     column-gap: 1.5vw;
     /* column-fill: revert; */
@@ -333,17 +337,4 @@ section {
 */
 .masthead {
     margin: 2vmin;
-}
-
-/* Responsive */
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-    .masonry {
-        column-count: 2;
-    }
-}
-
-@media only screen and (min-width: 1024px) {
-    .masonry {
-        column-count: 2;
-    }
 }
