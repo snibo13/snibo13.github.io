@@ -291,8 +291,9 @@ ul {
 .proj-desc {
     font-family: 'Inconsolata', monospace;
     width: 80%;
-    backdrop-filter: blur(1px);
-    font-size: 2vmin;
+    backdrop-filter: blur(2px);
+    border-radius: 5px;
+    font-size: 1.5vmin;
     position: relative;
     top: -2vh;
     padding: 2vh;
