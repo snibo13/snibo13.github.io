@@ -216,20 +216,20 @@ img {
     z-index: 2;
     position: absolute;
     left: 1vw;
-    top: 20px;
+    top: 1.6vh;
     /* left: 1vw; */
 }
 
 .desc .title {
-    font-size: 24px;
+    font-size: 1.6vh;
     margin: 0;
     /* padding: 0; */
 }
 
 .desc .status {
-    font-size: 16px;
+    font-size: 1.3vh;
     margin: 0;
-    margin-top: 10px;
+    margin-top: 0.9vh;
 }
 
 .project {
