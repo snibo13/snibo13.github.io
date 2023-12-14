@@ -69,7 +69,7 @@
         }
 
         #icons>a:hover {
-            scale: 1.1;
+            transform: scale(1.1);
         }
 
         .centered {
@@ -83,7 +83,6 @@
             border-radius: 15px;
             background-size: cover;
             background-position: center;
-
             background-color: var(--whitish);
             padding: 1vw;
             margin: 1vmin;
@@ -93,7 +92,7 @@
         }
 
         .card:hover {
-            scale: 1.01;
+            transform: scale(1.01);
         }
 
         .container-bar {
@@ -118,9 +117,12 @@
         }
 
         .body-text {
-            backdrop-filter: blur(2px);
+            backdrop-filter: blur(10px);
             font-size: 18px;
+            padding: 1vmin;
+            border-radius: 1vmin;
         }
+
 
         #projects-list {
             font-size: 20px;
@@ -178,6 +180,10 @@
             margin-top: 30%;
         }
 
+        .low-bottom {
+            margin-top: 50%;
+        }
+
         .middle {
             margin-top: 15%;
         }
@@ -222,11 +228,12 @@
             <br>
             My research interests are in human-robot interaction, assistive robotics and manipulation.
             <br>
+            <br>
             Currently:
             <span id="currently">
-                Seeking research oppourtunities
+                I'm currently working with <a href="https://www.zoomlab.ri.cmu.edu/">Dr. Zeynep Temel</a> and <a
+                    href="https://shredlabcmu.github.io/">Dr. Melisa Orta Martinez</a> on micro-robotics
             </span>
-
             <br>
             Previously @: CMU Robomechanics Lab, DoorDash Labs, Meta AI Research
         </div>
@@ -254,7 +261,7 @@
         <h1 class="bar-title">Work</h1>
         <div class="container-bar">
             <div class="four-width">
-                <div class="card" style="background-image: url('Labs\ Logo.png');;">
+                <div class="card" style="color: #eee7de; background-image: url('Labs\ Logo.png');">
                     <h1 class="title">DoorDash Labs Hardware Engineering Intern</h1>
                     <h2 class="subtitle">Summer 2022 & Summer 2023</h2>
                 </div>
@@ -266,7 +273,7 @@
             </div>
             <div class="three-width">
                 <div class="card"
-                    style="background-image: url('Robomechanics_Lab_Unitmark_Red_and_Black.jpg');background-color: white; background-size: contain; background-repeat: no-repeat;">
+                    style="color: rgb(169, 5, 5); background-image: url('Robomechanics_Lab_Unitmark_Red_and_Black.jpg');background-color: white; background-size: contain; background-repeat: no-repeat;">
                     <h1 class="title">Undergraduate Researcher</h1>
                     <h2 class="subtitle">Fall 2022 & Spring 2023</h2>
                 </div>
@@ -277,7 +284,7 @@
             </div>
 
             <div class="two-height three-width">
-                <div class="two-height card" style="background-image: url('mair.jpeg')">
+                <div class="two-height card" style="color: #0051b4; background-image: url('mair.jpeg')">
                     <h1 class="title">Facebook AI Research Robotics Intern</h1>
                     <h2 class="subtitle">Summer 2021</h2>
                 </div>
@@ -303,6 +310,39 @@
     <section id="projects" class="centered">
         <h1 class="bar-title">Projects</h1>
         <div class="container-bar">
+            <div class="light-text four-width card" style="background-image: url('Juggling.png');">
+                <a href="">
+                    <h1 class="title">Toss Juggling In-Sim (and on Hardware)</h1>
+                    <h2 class="subtitle">Fall 2023</h2>
+                    <p class="bottom body-text">For my mechanics of manipulation course, I developed a simulation of a
+                        toss juggling robot in MuJoCo. I used reinforcement learning to learn a policy for the robot to
+                        juggle balls using DDPG. I also applied the co-design method to design a hardware system to
+                        embody the policy.
+                    </p>
+                    </p>
+                </a>
+            </div>
+            <div class="three-width card" style="background-image: url('Spine\ path.png');">
+                <a href="">
+                    <h1 class="title">Model Predictive Control for Constrained Dynaamic Systems</h1>
+                    <h2 class="subtitle">Fall 2023</h2>
+                    <p class="bottom body-text">For my mathematical methods in robotics course, I developed a model
+                        predictive controller for a spined quadruped robot. I also applied a similar framework to a
+                        ballbot driving a wheelchair.
+                    </p>
+                    </p>
+                </a>
+            </div>
+            <div class="three-width card" style="background-image: url('Phlebot-Logo.JPG');">
+                <a href="http://projects.snibo.me/phlebot">
+                    <h1 class=" title">Phlebot</h1>
+                    <h2 class="subtitle">Spring 2023</h2>
+                    <p class="low-bottom body-text">For my mechatronics capstone, my group developed a prototype
+                        autonomous
+                        venipuncture
+                        robot.</p>
+                </a>
+            </div>
             <div class="light-text four-width card" style="background-image: url('MAPR\ Iso.jpg');">
                 <a href="http://projects.snibo.me/mapr">
                     <h1 class="title">Mapping and Payload Robot</h1>
@@ -323,16 +363,8 @@
                         Facebook AI research</p>
                 </a>
             </div>
-            <div class="three-width card" style="background-image: url('Phlebot-Logo.JPG');">
-                <a href="http://projects.snibo.me/phlebot">
-                    <h1 class=" title">Phlebot</h1>
-                    <h2 class="subtitle">Spring 2023</h2>
-                    <p class="bottom body-text">For my mechatronics capstone, my group developed a prototype autonomous
-                        venipuncture
-                        robot.</p>
-                </a>
-            </div>
-            <div class="five-width light-text card" style="background-image: url('Jenga.jpg');">
+
+            <div class="three-width light-text card" style="background-image: url('Jenga.jpg');">
                 <a href="">
                     <h1 class="title">Jenga Bot</h1>
                     <h2 class="subtitle">Winter 2021</h2>
@@ -342,6 +374,15 @@
                         controller for a robot to build a jenga tower, with bonus points for speed and a need for
                         precision.
                     </p>
+                </a>
+            </div>
+            <div class="four-width light-text card" style="background-image: url('BrevisFull.JPG');">
+                <a href="http://projects.snibo.me/brevis">
+                    <h1 class="title">Brevis</h1>
+                    <h2 class="subtitle">Spring 2023</h2>
+                    <p class="bottom body-text">A custom macropad I created as a precursor to a full sized keyboard, and
+                        an
+                        excercise in electronics development.</p>
                 </a>
             </div>
             <div class="five-width two-height card">
@@ -359,15 +400,7 @@
                     </ul>
                 </a>
             </div>
-            <div class="five-width light-text card" style="background-image: url('BrevisFull.JPG');">
-                <a href="http://projects.snibo.me/brevis">
-                    <h1 class="title">Brevis</h1>
-                    <h2 class="subtitle">Spring 2023</h2>
-                    <p class="bottom body-text">A custom macropad I created as a precursor to a full sized keyboard, and
-                        an
-                        excercise in electronics development.</p>
-                </a>
-            </div>
+
 
         </div>
 
