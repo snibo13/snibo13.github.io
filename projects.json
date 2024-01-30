@@ -1,0 +1,48 @@
+[
+    {
+        "title": "Toss Juggling In-Sim (and on Hardware)",
+        "date": "Fall 2023",
+        "description": "For my mechanics of manipulation course, I developed a simulation of a toss juggling robot in MuJoCo. I used reinforcement learning to learn a policy for the robot to juggle balls using DDPG. I also applied the co-design method to design a hardware system to embody the policy.",
+        "image": "Juggling.png"
+    },
+    {
+        "title": "Model Predictive Control for Constrained Dynamic Systems",
+        "date": "Fall 2023",
+        "description": "For my mathematical methods in robotics course, I developed a model predictive controller for a spined quadruped robot. I also applied a similar framework to a ballbot driving a wheelchair.",
+        "image": "Spine path.png"
+    },
+    {
+        "title": "Phlebot",
+        "date": "Spring 2023",
+        "description": "For my mechatronics capstone, my group developed a prototype autonomous venipuncture robot.",
+        "image": "Phlebot-Logo.JPG",
+        "link": "http://projects.snibo.me/phlebot"
+    },
+    {
+        "title": "Mapping and Payload Robot",
+        "date": "Spring 2023",
+        "description": "For my robotics engineering capstone, my group worked on developing an indoor delivery robot using off the shelf parts and ROS 1. I focused on the locomotion subsystem.",
+        "image": "MAPR Iso.jpg",
+        "link": "http://projects.snibo.me/mapr"
+    },
+    {
+        "title": "D'Manus Hand",
+        "date": "Summer 2021",
+        "description": "My work on the D'Manus, an open-source rehensile robotic hand, during my time at Facebook AI research",
+        "image": "DManus.jpg",
+        "link": "http://projects.snibo.me/facebook-ai-research-internship"
+    },
+    {
+        "title": "Jenga Bot",
+        "date": "Winter 2021",
+        "description": "The final project for my robot kinematics and dynamics course was designing a controller for a robot to build a Jenga tower, with bonus points for speed and a need for precision.",
+        "image": "Jenga.jpg"
+    },
+    {
+        "title": "Brevis",
+        "date": "Spring 2023",
+        "description": "A custom macropad I created as a precursor to a full-sized keyboard, and an exercise in electronics development.",
+        "image": "BrevisFull.JPG",
+        "link": "http://projects.snibo.me/brevis"
+    }
+]

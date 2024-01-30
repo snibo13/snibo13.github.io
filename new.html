@@ -14,71 +14,85 @@
 
         gtag('config', 'G-7TVZ77RXFX');
     </script>
-    <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #fcfcfc;
-        }
-
-        #masthead {
-            height: 80vh;
-            width: 100vw;
-            margin: 0px;
-            overflow: hidden;
-
-            display: grid;
-            place-items: center;
-        }
-
-        #bar {
-            height: 20vh;
-            margin: 0;
-            /* padding-top: 5vh; */
-        }
-
-        #left {
-            position: absolute;
-            left: 5vw;
-            top: 2vh;
-            padding-right: 10vw;
-        }
-
-        #right {
-            position: absolute;
-            right: 5vw;
-            top: 4vh;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            margin-left: 1vw;
-            margin-right: 1vw;
-        }
-    </style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Josefin+Sans:wght@700&family=Noto+Sans:ital,wght@0,800;1,800&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/09e18ce3a6.js" crossorigin="anonymous"></script>
+    <script src="./interactive-list.js" defer></script>
+    <link href="new.css" rel="stylesheet">
 </head>
 
-<body>
-    <header id="bar">
-        <div id="left">
-            <img src="Logo.png" alt="" width="75vw">
-        </div>
-        <div id="right">
-            <a href="Resume.pdf"> RESUME </a>
-            <a href="http://github.com/snibo13">GITHUB</a>
-            <a href="mailto:snimakob@andrew.cmu.edu">CONTACT</a>
-        </div>
-    </header>
-    <div id="masthead">
-        <span id="name">Sidney Nimako</span>
-        a mechanical engineering undergraduate at Carnegie Mellon University.
-        <br>
-        My research interests are in human-robot interaction, assistive robotics and manipulation.
-        <br>
-        Previously at DoorDash Labs and Meta AI Research
-    </div>
+<body class="marginless">
+    <div id="foreground">
+        <section id="masthead" class="centered">
+
+            <span id="name">Hi! I'm Sidney Nimako</span>
+            <div id="bio">
+                I'm a first year masters student in robotics at <span style="color: var(--madder)">Carnegie Mellon
+                    University.</span>
+                <br>
+                My research interests are in assistive robotics, human-robot interaction, and robotic manipulation.
+                <br>
+                Currently:
+                <span id="currently">
+                    I'm currently working with<a class="prof" href="https://www.zoomlab.ri.cmu.edu/">Dr. Zeynep
+                        Temel</a> and <a class="prof" href="https://shredlabcmu.github.io/"> Dr. Melisa Orta
+                        Martinez</a> on micro-robotics for search and rescue.
+                </span>
+                <br>
+                Previously @: CMU Robomechanics Lab, DoorDash Labs, Meta AI Research
+            </div>
+            <div id="icons">
+                <a href="http://projects.snibo.me">
+                    Blog
+                </a>
+                <a href="https://www.linkedin.com/in/snibo">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="mailto:snimakob@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="Resume.pdf">
+                    <i class="fa-solid fa-paperclip"></i>
+                </a>
+                <a href="https://www.github.com/snibo13">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+            </div>
+        </section>
+        <section id="work" class="centered">
+            <ul id="side-list">
+                <li class="work-li" data-id="DD">
+                    DoorDash Labs - Hardware Engineering Intern (2022 + 2023)
+                </li>
+                <li class="work-li" data-id="RML">
+                    CMU Robomechanics Lab - Research Intern (2022-2023)
+                </li>
+                <li class="work-li" data-id="MAIR">
+                    Meta AI Research - Research Intern (2021)
+                </li>
+                <li class="work-li" data-id="BMV">
+                    Biomotivate - VR Development Intern (2020)
+                </li>
+
+            </ul>
+            <div id="work-card">
+                <div id="work-header">
+                    <div>
+                        <h1 id="work-title" class="title"></h1>
+                        <h2 id="work-date" class="subtitle"></h2>
+                    </div>
+                    <img id="work-flag" src="Noise.png" alt="Company Logo">
+                </div>
+                <div id="work-desc"></div>
+            </div>
+        </section>
+
+
+        <footer class="paddingless marginless">
+            Inspired by ansonyu.me and others &copy; Sidney Boateng 2024
+        </footer>
 </body>
 
 </html>

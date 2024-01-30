@@ -1,0 +1,34 @@
+{
+    "DD": {
+        "Title": "Hardware Engineering Intern",
+        "Company": "DoorDash",
+        "Location": "San Francisco, CA",
+        "Date": "Summer 2022 & Summer 2023",
+        "Image": "Labs Logo.png",
+        "Description": "I worked with DoorDash Labs to develop software and hardware for a 4 quadrant dynamometer, essentially a treadmill for cars. I spent the second summer developing an interface and software to expand the functionality and enable new kinds of testing with the device"
+    },
+    "RML": {
+        "Title": "Undergraduate Researcher",
+        "Company": "Robomechanics Lab",
+        "Location": "Carnegie Mellon University",
+        "Date": "Fall 2022 - Spring 2023",
+        "Image": "rml-logo-robots-color.png",
+        "Description": "I worked with a couple of masters students and Dr. Aaron Johnson on exploring the costs and conrols of a spined quadruped robot. I focused on evaluation scenarios and the generating cost functions for the hardware."
+    },
+    "MAIR": {
+        "Title": " Robotics Research Intern",
+        "Company": "Meta",
+        "Location": "Pittsburgh, PA",
+        "Date": "Summer 2021",
+        "Image": "mair.jpeg",
+        "Description": "Worked on the development of a three digit dextrous hand. My work focused on redesigns, documentation and tribology testing on soft capacitive sensors."
+    },
+    "BMV": {
+        "Title": "VR Development Intern",
+        "Company": "Biomotivate",
+        "Location": "Pittsburgh, PA",
+        "Date": "Summer 2020",
+        "Image": "biomotivate_logo.webp",
+        "Description": "I worked with a Pittsburgh based start up to develop Virtual Reality experiences for those in addition recovery. I also developed a data acquisition platform to explore the benefits that might arise from the different apps."
+    }
+}
