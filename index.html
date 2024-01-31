@@ -3,391 +3,143 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidney Nimako</title>
+    <link rel="icon" href="Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Josefin+Sans:wght@700&family=Noto+Sans:ital,wght@0,800;1,800&family=Poppins:wght@600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:wght@300,500,600,700&display=swap"
         rel="stylesheet">
+    <link href="new.css" rel="stylesheet">
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-7TVZ77RXFX');
+    </script>
     <script src="https://kit.fontawesome.com/09e18ce3a6.js" crossorigin="anonymous"></script>
-    <title>Document</title>
-    <style>
-        :root {
-            --dark-white: #efedec;
-            --linen: #ede8e6;
-            --whitish: #fff;
-            --jonquil: #F1C500;
-            --rich-black: #040F0F;
-            --shamrock: #66A182;
-            --madder: #C41230;
-            --greh: #a5a5a7;
-            --zomp: #2CA58D;
-
-            --bg-1: #f2f6f7;
-            --bg-2: #F0EFF4;
-            --accent-blue: #12263A;
-            --accent-grey: #6B818C;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Josefin Sans', sans-serif;
-            background-color: var(--bg-1);
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-            text-emphasis: none;
-        }
-
-        #name {
-            font-size: 7.5vw;
-        }
-
-        #bio {
-            margin-top: 2vh;
-            font-size: 2vmin;
-            line-height: 1.5em;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        #masthead {
-            padding: 20vh 0;
-        }
-
-        #icons {
-            display: flex;
-            flex-direction: row;
-            width: 20vw;
-            justify-content: space-around;
-            margin-top: 5vmin;
-            color: var(--accent-blue);
-        }
-
-        #icons>a {
-            font-size: 5vh;
-        }
-
-        #icons>a:hover {
-            transform: scale(1.1);
-        }
-
-        .centered {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .card {
-            border-radius: 15px;
-            background-size: cover;
-            background-position: center;
-            background-color: var(--whitish);
-            padding: 1vw;
-            margin: 1vmin;
-            -webkit-transition: -webkit-transform 200ms ease-in;
-            transition: transform 200ms ease-in;
-            min-height: 40vh;
-        }
-
-        .card:hover {
-            transform: scale(1.01);
-        }
-
-        .container-bar {
-            display: grid;
-            grid-template-columns: repeat(10, 10%);
-            /* display: flex;
-            direction: row;
-            flex-wrap: wrap; */
-
-            margin: 2%;
-        }
-
-        .bar-title {
-            width: 99vw;
-            text-align: center;
-            font-size: 48px;
-        }
-
-        .title {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .body-text {
-            backdrop-filter: blur(10px);
-            font-size: 18px;
-            padding: 1vmin;
-            border-radius: 1vmin;
-        }
-
-
-        #projects-list {
-            font-size: 20px;
-        }
-
-        #projects-list>li {
-            line-height: 2em;
-        }
-
-        .two-width {
-            grid-column: span 2;
-        }
-
-        .three-width {
-            grid-column: span 3;
-        }
-
-        .four-width {
-            grid-column: span 4;
-        }
-
-        .five-width {
-            grid-column: span 5;
-        }
-
-
-        .small-width-card {
-            /* width: 10vw; */
-            grid-column: span 2;
-        }
-
-        .wide-card {
-            /* width: 35vw; */
-            grid-column: span 4;
-        }
-
-        .xtra-wide-card {
-            /* width: 45vw; */
-            grid-column: span 6;
-        }
-
-        .two-height {
-            grid-row: span 2;
-        }
-
-        .xtra-tall-card {
-            grid-row: span 3;
-        }
-
-        .under {
-            margin: 3vmin;
-        }
-
-        .bottom {
-            margin-top: 30%;
-        }
-
-        .low-bottom {
-            margin-top: 50%;
-        }
-
-        .middle {
-            margin-top: 15%;
-        }
-
-        .light-text {
-            color: white;
-        }
-
-        footer {
-            padding: 2vh;
-            padding-top: 4vh;
-            text-align: center;
-            font-size: 20px;
-        }
-    </style>
+    <script src="./interactive-list.js" defer></script>
 </head>
 
-<body style="padding-left: 2vw; margin-right: 2vw;background-color: red;">
-    <section id="masthead" class="centered">
-        <span id="name">Sidney Nimako</span>
-        <div id="bio">
-            I'm a first year masters student in robotics at <span style="color: var(--madder)">Carnegie Mellon
-                University.</span>
-            <br>
-            My research interests are in human-robot interaction, assistive robotics and manipulation.
-            <br>
-            <br>
-            Currently:
-            <span id="currently">
-                I'm currently working with <a href="https://www.zoomlab.ri.cmu.edu/">Dr. Zeynep Temel</a> and <a
-                    href="https://shredlabcmu.github.io/">Dr. Melisa Orta Martinez</a> on micro-robotics
-            </span>
-            <br>
-            Previously @: CMU Robomechanics Lab, DoorDash Labs, Meta AI Research
-        </div>
-        <div id="icons">
-            <a href="http://projects.snibo.me">
-                Blog
-            </a>
-            <a href="https://www.linkedin.com/in/snibo">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="mailto:snimakob@gmail.com">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
-            <a href="Resume.pdf">
-                <i class="fa-solid fa-paperclip"></i>
-            </a>
-            <a href="https://www.github.com/snibo13">
-                <i class="fa-brands fa-github"></i>
-            </a>
+<body class="marginless">
+    <div id="foreground">
+        <section id="masthead" class="centered">
 
-        </div>
+            <span id="name">Hi! I'm Sidney Nimako</span>
+            <div id="bio">
+                I'm a first year masters student in robotics at <span style="color: var(--madder)">Carnegie Mellon
+                    University.</span>
+                <br>
+                My research interests are in assistive robotics, human-robot interaction, and robotic manipulation.
+                <br>
+                Currently:
+                <span id="currently">
+                    I'm currently working with <a class="prof" href="https://www.zoomlab.ri.cmu.edu/">Dr. Zeynep
+                        Temel</a> and <a class="prof" href="https://shredlabcmu.github.io/"> Dr. Melisa Orta
+                        Martinez</a> on micro-robotics for search and rescue.
+                </span>
+                <br>
+                Previously @: CMU Robomechanics Lab, DoorDash Labs, Meta AI Research
+            </div>
+            <div id="icons">
+                <a href="http://projects.snibo.me">
+                    Blog
+                </a>
+                <a href="https://www.linkedin.com/in/snibo">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="mailto:snimakob@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="Resume.pdf">
+                    <i class="fa-solid fa-paperclip"></i>
+                </a>
+                <a href="https://www.github.com/snibo13">
+                    <i class="fa-brands fa-github"></i>
+                </a>
 
-    </section>
-    <section id="work" class="centered">
-        <h1 class="bar-title">Work</h1>
-        <div class="container-bar">
-            <div class="four-width">
-                <div class="card" style="color: #eee7de; background-image: url('Labs\ Logo.png');">
-                    <h1 class="title">DoorDash Labs Hardware Engineering Intern</h1>
-                    <h2 class="subtitle">Summer 2022 & Summer 2023</h2>
+            </div>
+        </section>
+        <!-- Layout inspired by ansonyu.me -->
+        <section id="work" class="centered">
+            <h1 class="section-title">00 Work</h1>
+            <ul class="side-list">
+                <li class="work-li" data-id="DD">
+                    DoorDash Labs - Hardware Engineering Intern (2022 + 2023)
+                </li>
+                <li class="work-li" data-id="RML">
+                    CMU Robomechanics Lab - Research Intern (2022-2023)
+                </li>
+                <li class="work-li" data-id="MAIR">
+                    Meta AI Research - Research Intern (2021)
+                </li>
+                <li class="work-li" data-id="BMV">
+                    Biomotivate - VR Development Intern (2020)
+                </li>
+
+            </ul>
+            <div id="work-card">
+                <div id="work-header">
+                    <div>
+                        <h1 id="work-title" class="title"></h1>
+                        <h2 id="work-date" class="subtitle"></h2>
+                    </div>
+                    <img id="work-flag" src="Noise.png" alt="Company Logo">
                 </div>
-                <p class="under body-text">I worked with DoorDash Labs to develop software and hardware for a 4
-                    quadrant dynamometer, essentially a treadmill for cars. I spent the second summer developing an
-                    interface and software to expand the functionality and enable new kinds of testing with the
-                    device
-                </p>
+                <div id="work-desc"></div>
             </div>
-            <div class="three-width">
-                <div class="card"
-                    style="color: rgb(169, 5, 5); background-image: url('Robomechanics_Lab_Unitmark_Red_and_Black.jpg');background-color: white; background-size: contain; background-repeat: no-repeat;">
-                    <h1 class="title">Undergraduate Researcher</h1>
-                    <h2 class="subtitle">Fall 2022 & Spring 2023</h2>
+        </section>
+        <section id="projects" class="centered">
+            <h1 class="section-title">01 Projects</h1>
+            <ul class="side-list">
+                <li class="proj-li" data-id="0">
+                    Toss Juggling In-Sim (and on Hardware)
+                </li>
+                <li class="proj-li" data-id="1">
+                    Trajectory Optimization for Constrained Dynamical Systems
+                </li>
+                <li class="proj-li" data-id="2">
+                    Phlebot
+                </li>
+                <li class="proj-li" data-id="3">
+                    Mapping and Payload Robot (MAPR)
+                </li>
+                <li class="proj-li" data-id="4">
+                    D'Manus Hand
+                </li>
+                <li class="proj-li" data-id="5">
+                    Jenga Bot
+                </li>
+                <li class="proj-li" data-id="6">
+                    Brevis
+                </li>
+
+
+            </ul>
+            <div id="proj-card">
+                <div id="proj-header">
+                    <div>
+                        <h1 id="proj-title" class="title"></h1>
+                        <h2 id="proj-date" class="subtitle"></h2>
+                    </div>
                 </div>
-                <p class="under body-text">I worked with a couple of masters students and Dr. Aaron Johnson on exploring
-                    the costs and conrols of a spined quadruped robot. I focused on evaluation scenarios and the
-                    generating cost functions for the hardware.
-                </p>
-            </div>
+                <span>
 
-            <div class="two-height three-width">
-                <div class="two-height card" style="color: #0051b4; background-image: url('mair.jpeg')">
-                    <h1 class="title">Facebook AI Research Robotics Intern</h1>
-                    <h2 class="subtitle">Summer 2021</h2>
-                </div>
-                <p class="under body-text">Worked on the development of a three digit dextrous hand. My work focused
-                    on
-                    redesigns, documentation and tribology testing on soft capacitive sensors.</p>
+                    <div id="proj-desc">
+                    </div>
+                    <a id="proj-link" href="/">Read More</a>
+                </span>
+                <img id="proj-flag" src="Noise.png" alt="Company Logo">
             </div>
-
-            <div class="five-width">
-                <div class=" card">
-                    <h1 class="title">Biomotivate VR Development Intern</h1>
-                    <h2 class="subtitle">Summer 2020</h2>
-                </div>
-                <p class="under body-text">I worked with a Pittsburgh based start up to develop Virtual Reality
-                    experiences
-                    for those in addition recovery. I also developed a data acquisition platform to explore the
-                    benefits
-                    that might arise from the different apps.</p>
-            </div>
-
-        </div>
-    </section>
-    <section id="projects" class="centered">
-        <h1 class="bar-title">Projects</h1>
-        <div class="container-bar">
-            <div class="light-text four-width card" style="background-image: url('Juggling.png');">
-                <a href="">
-                    <h1 class="title">Toss Juggling In-Sim (and on Hardware)</h1>
-                    <h2 class="subtitle">Fall 2023</h2>
-                    <p class="bottom body-text">For my mechanics of manipulation course, I developed a simulation of a
-                        toss juggling robot in MuJoCo. I used reinforcement learning to learn a policy for the robot to
-                        juggle balls using DDPG. I also applied the co-design method to design a hardware system to
-                        embody the policy.
-                    </p>
-                    </p>
-                </a>
-            </div>
-            <div class="three-width card" style="background-image: url('Spine\ path.png');">
-                <a href="">
-                    <h1 class="title">Model Predictive Control for Constrained Dynaamic Systems</h1>
-                    <h2 class="subtitle">Fall 2023</h2>
-                    <p class="bottom body-text">For my mathematical methods in robotics course, I developed a model
-                        predictive controller for a spined quadruped robot. I also applied a similar framework to a
-                        ballbot driving a wheelchair.
-                    </p>
-                    </p>
-                </a>
-            </div>
-            <div class="three-width card" style="background-image: url('Phlebot-Logo.JPG');">
-                <a href="http://projects.snibo.me/phlebot">
-                    <h1 class=" title">Phlebot</h1>
-                    <h2 class="subtitle">Spring 2023</h2>
-                    <p class="low-bottom body-text">For my mechatronics capstone, my group developed a prototype
-                        autonomous venipuncture robot. <a href="http://projects.snibo.me/phlebot">Read More</a></p>
-                </a>
-            </div>
-            <div class="light-text four-width card" style="background-image: url('MAPR\ Iso.jpg');">
-                <a href="http://projects.snibo.me/mapr">
-                    <h1 class="title">Mapping and Payload Robot</h1>
-                    <h2 class="subtitle">Spring 2023</h2>
-                    <p class="bottom body-text">For my robotics engineering capstone, my group worked on developing an
-                        indoor delivery robot using off the shelf parts and ROS 1. I focused on the locomotion
-                        subsystem.
-                    </p>
-                </a>
-            </div>
-            <div class="three-width light-text card" style="background-image: url('DManus.jpg');">
-                <a href="http://projects.snibo.me/facebook-ai-research-internship">
-                    <h1 class="title">D'Manus Hand</h1>
-                    <h2 class="subtitle">Summer 2021</h2>
-                    <p class="bottom light-text body-text">My work on the D'Manus, an open-source rehensile robotic
-                        hand,
-                        during my time at
-                        Facebook AI research</p>
-                </a>
-            </div>
-
-            <div class="three-width light-text card" style="background-image: url('Jenga.jpg');">
-                <a href="">
-                    <h1 class="title">Jenga Bot</h1>
-                    <h2 class="subtitle">Winter 2021</h2>
-                    <p class="bottom body-text">The final project for my robot kinematics and dynamics course was
-                        designing
-                        a
-                        controller for a robot to build a jenga tower, with bonus points for speed and a need for
-                        precision.
-                    </p>
-                </a>
-            </div>
-            <div class="four-width light-text card" style="background-image: url('BrevisFull.JPG');">
-                <a href="http://projects.snibo.me/brevis">
-                    <h1 class="title">Brevis</h1>
-                    <h2 class="subtitle">Spring 2023</h2>
-                    <p class="bottom body-text">A custom macropad I created as a precursor to a full sized keyboard, and
-                        an
-                        excercise in electronics development.</p>
-                </a>
-            </div>
-            <div class="five-width two-height card">
-                <a href="http://projects.snibo.me/">
-                    <h1 class="title">Others</h1>
-                    <h2 class="subtitle">Miscelaneous small projects in progress and otherwise</h2>
-                    <ul id="projects-list">
-                        <li>Social-network written with GraphQL API, Typescript backend and Svelte frontend</li>
-                        <li>Odometry system in WeBots</li>
-                        <li>Discrete-Bayes Localization system in Webots</li>
-                        <li>Twitch chat bot written in Typescript with Node.js</li>
-                        <li>Four Fours Math puzzle game</li>
-                        <li>Balancing robot simulation in Webots</li>
-                        <li>Achievement system + Chatbot written with a GraphQL API in TypeScript with Node.js</li>
-                    </ul>
-                </a>
-            </div>
+        </section>
 
 
-        </div>
-
-    </section>
-    <footer>
-        &copy; Sidney Nimako 2023
-    </footer>
+        <footer class="paddingless marginless">
+            &copy; Sidney Boateng 2024
+        </footer>
 </body>
 
 </html>
