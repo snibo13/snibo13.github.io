@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sidney Nimako</title>
     <link rel="icon" href="Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:wght@300,500,600,700&display=swap"
+        rel="stylesheet">
+    <link href="new.css" rel="stylesheet">
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -14,12 +20,8 @@
 
         gtag('config', 'G-7TVZ77RXFX');
     </script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Josefin+Sans:wght@700&family=Noto+Sans:ital,wght@0,800;1,800&family=Poppins:wght@600;700&display=swap"
-        rel="stylesheet">
     <script src="https://kit.fontawesome.com/09e18ce3a6.js" crossorigin="anonymous"></script>
     <script src="./interactive-list.js" defer></script>
-    <link href="new.css" rel="stylesheet">
 </head>
 
 <body class="marginless">
@@ -35,7 +37,7 @@
                 <br>
                 Currently:
                 <span id="currently">
-                    I'm currently working with<a class="prof" href="https://www.zoomlab.ri.cmu.edu/">Dr. Zeynep
+                    I'm currently working with <a class="prof" href="https://www.zoomlab.ri.cmu.edu/">Dr. Zeynep
                         Temel</a> and <a class="prof" href="https://shredlabcmu.github.io/"> Dr. Melisa Orta
                         Martinez</a> on micro-robotics for search and rescue.
                 </span>
@@ -61,8 +63,10 @@
 
             </div>
         </section>
+        <!-- Layout inspired by ansonyu.me -->
         <section id="work" class="centered">
-            <ul id="side-list">
+            <h1 class="section-title">00 Work</h1>
+            <ul class="side-list">
                 <li class="work-li" data-id="DD">
                     DoorDash Labs - Hardware Engineering Intern (2022 + 2023)
                 </li>
@@ -88,10 +92,53 @@
                 <div id="work-desc"></div>
             </div>
         </section>
+        <section id="projects" class="centered">
+            <h1 class="section-title">01 Projects</h1>
+            <ul class="side-list">
+                <li class="proj-li" data-id="0">
+                    Toss Juggling In-Sim (and on Hardware)
+                </li>
+                <li class="proj-li" data-id="1">
+                    Trajectory Optimization for Constrained Dynamical Systems
+                </li>
+                <li class="proj-li" data-id="2">
+                    Phlebot
+                </li>
+                <li class="proj-li" data-id="3">
+                    Mapping and Payload Robot (MAPR)
+                </li>
+                <li class="proj-li" data-id="4">
+                    D'Manus Hand
+                </li>
+                <li class="proj-li" data-id="5">
+                    Jenga Bot
+                </li>
+                <li class="proj-li" data-id="6">
+                    Brevis
+                </li>
+
+
+            </ul>
+            <div id="proj-card">
+                <div id="proj-header">
+                    <div>
+                        <h1 id="proj-title" class="title"></h1>
+                        <h2 id="proj-date" class="subtitle"></h2>
+                    </div>
+                </div>
+                <span>
+
+                    <div id="proj-desc">
+                    </div>
+                    <a id="proj-link" href="/">Read More</a>
+                </span>
+                <img id="proj-flag" src="Noise.png" alt="Company Logo">
+            </div>
+        </section>
 
 
         <footer class="paddingless marginless">
-            Inspired by ansonyu.me and others &copy; Sidney Boateng 2024
+            &copy; Sidney Boateng 2024
         </footer>
 </body>
 
