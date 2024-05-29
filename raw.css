@@ -22,6 +22,18 @@ html {
     background-color: var(--background);
 }
 
+#icons {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--accent);
+    margin-top: 2vh;
+
+}
+
 #mobile-disclaimer {
     font-size: small;
     text-align: center;
@@ -78,6 +90,11 @@ html {
         font-size: 5vh;
         font-weight: bolder;
     }
+
+    #icons {
+        flex-direction: row;
+        font-size: 40px;
+    }
 }
 
 
@@ -109,17 +126,27 @@ html {
 }
 
 .section-content {
-    /* border: 2px solid; */
+    border: 4px solid #00000022;
     margin: 2vh;
     padding: 2vh;
     border-radius: 10px;
     font-family: 'Noto Sans', sans-serif;
-    background-color: var(--content-bkg);
+    margin-top: 4vh;
+    /* background-color: var(--content-bkg); */
 }
 
 .section-content h1 {
     font-family: "EB Garamond", serif;
     font-weight: 400;
+    margin-top: 0;
+    padding-top: 0;
+    position: relative;
+    top: -5vh;
+    background-color: var(--background);
+    /* width: 10vw; */
+    padding-left: 2vw;
+    padding-right: 2vw;
+    width: auto;
 }
 
 
@@ -160,21 +187,15 @@ html {
 }
 
 footer {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     font-style: italic;
-    margin-top: 2vh;
+    margin-top: 5vh;
+    width: 98vw;
 }
 
-#icons {
-    font-size: 40px;
-    display: flex;
-    flex-direction: row;
-    width: 20vw;
-    justify-content: space-around;
-    color: var(--accent);
-    margin-top: 2vh;
 
-}
 
 #icons>a:hover {
     transform: scale(1.2);
