@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentence Embedding Calculator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tensorflow/4.15.0/tf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tensorflow-text/4.15.0/tf-text.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            line-height: 1.5;
+        }
+
+        .container {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin: 1rem 0;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            min-height: 100px;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+
+        #result {
+            margin-top: 1rem;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+
+        .error {
+            color: #dc3545;
+            margin-top: 1rem;
+        }
+
+        .loading {
+            display: none;
+            margin-top: 1rem;
+        }
+
+        .loading.visible {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sentence Embedding Calculator</h1>
+        <p>Enter a sentence below to compute its embedding using TensorFlow Universal Sentence Encoder.</p>
+        
+        <textarea id="input" placeholder="Enter your sentence here..."></textarea>
+        
+        <button id="calculate">Calculate Embedding</button>
+        
+        <div id="loading" class="loading">
+            Loading model and computing embedding... This might take a few moments on first run.
+        </div>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const input = document.getElementById('input');
+        const calculateBtn = document.getElementById('calculate');
+        const loading = document.getElementById('loading');
+        const result = document.getElementById('result');
+
+        let model = null;
+
+        async function loadModel() {
+            try {
+                model = await tf.loadGraphModel(
+                    'https://tfhub.dev/tensorflow/tfjs-model/universal-sentence-encoder-lite/1/default/1',
+                    { fromTFHub: true }
+                );
+                return true;
+            } catch (error) {
+                console.error('Error loading model:', error);
+                return false;
+            }
+        }
+
+        async function calculateEmbedding(text) {
+            if (!model) {
+                const loaded = await loadModel();
+                if (!loaded) {
+                    throw new Error('Failed to load model');
+                }
+            }
+
+            const embeddings = await model.predict(tf.tensor([text]));
+            return Array.from(await embeddings.data());
+        }
+
+        calculateBtn.addEventListener('click', async () => {
+            const text = input.value.trim();
+            
+            if (!text) {
+                result.innerHTML = '<div class="error">Please enter a sentence.</div>';
+                return;
+            }
+
+            calculateBtn.disabled = true;
+            loading.classList.add('visible');
+            result.innerHTML = '';
+
+            try {
+                const embedding = await calculateEmbedding(text);
+                
+                const formattedResult = `Embedding vector (${embedding.length} dimensions):
+                
+[${embedding.slice(0, 8).map(n => n.toFixed(6)).join(', ')},
+ ...,
+ ${embedding.slice(-8).map(n => n.toFixed(6)).join(', ')}]`;
+                
+                result.textContent = formattedResult;
+            } catch (error) {
+                result.innerHTML = '<div class="error">Error computing embedding. Please try again.</div>';
+                console.error('Error:', error);
+            } finally {
+                calculateBtn.disabled = false;
+                loading.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

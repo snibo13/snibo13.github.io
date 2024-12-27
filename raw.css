@@ -12,8 +12,13 @@
     --cmu-red: #C51230;
     --accent-1: #274752;
     --accent-: #c0592a;
-    --background: #efefef;
+    /* --background: #efefef; */
+    --background: #f0feff;
     --content-bkg: #e7e5e6;
+    --midnight-green: #0B3C49;
+    --raspberry: #DD1155;
+    --orange-wheel: #FF7F11;
+    --light-sea-green: #21A0A0;
 }
 
 html {
@@ -59,6 +64,14 @@ html {
 
 .sub-section-text {
     line-height: 0.2;
+}
+
+.section-box:nth-child(1) {
+    background-color: var(--light-sea-green);
+}
+
+.section-box:nth-child(2) {
+    background-color: var(--midnight-green);
 }
 
 @media screen and (min-width: 768px) {
