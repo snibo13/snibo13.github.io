@@ -1,43 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sentence Embedding Calculator</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tensorflow/4.15.0/tf.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tensorflow-text/4.15.0/tf-text.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/universal-sentence-encoder"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mlc-ai/web-llm@0.2.77/lib/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/universal-sentence-encoder"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            line-height: 1.5;
+            font-family: "Sriracha", serif;
+            background-color: #50c8e6;
+
         }
 
         .container {
-            background-color: #f8f9fa;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
         }
 
-        textarea {
-            width: 100%;
-            padding: 0.5rem;
-            margin: 1rem 0;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-            min-height: 100px;
-            font-size: 1rem;
+        #title {
+            font-family: 'Knewave';
+            font-size: 10vh;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+        }
+
+        input[type="text"] {
+            width: 60vw;
+            font-size: 24px;
+            border: 3px solid #000000;
+            border-radius: 5px;
+            min-height: 40px;
+            text-align: center;
         }
 
         button {
-            background-color: #007bff;
+            background-color: black;
             color: white;
             border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
+            padding: 30px 30px;
+            border-radius: 20px;
             cursor: pointer;
             font-size: 1rem;
         }
@@ -52,9 +71,9 @@
         }
 
         #result {
-            margin-top: 1rem;
+            margin-top: 36px;
             white-space: pre-wrap;
-            font-family: monospace;
+            font-size: 24px;
         }
 
         .error {
@@ -72,85 +91,151 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <h1>Sentence Embedding Calculator</h1>
-        <p>Enter a sentence below to compute its embedding using TensorFlow Universal Sentence Encoder.</p>
-        
-        <textarea id="input" placeholder="Enter your sentence here..."></textarea>
-        
-        <button id="calculate">Calculate Embedding</button>
-        
+        <h1 id="title">SHRTN</h1>
+        <h1 id="initial-sentence"> The quick brown fox jumps over the lazy dog</h1>
+
+        <form autocomplete="off" autocapitalize="none" autocorrect="on">
+            <input type="text" id="input" placeholder="Enter your sentence here...">
+            <!-- <p>Character count:
+            <p id="character-count">0</p> -->
+            </p>
+            <br>
+            <span style="display: flex; flex-direction: row; width: 50%; justify-content: space-between;">
+
+                <button id="calculate">Calculate Embedding</button>
+                <button id="next">Next Sentence</button>
+            </span>
+        </form>
+        <!-- <textarea id="input" placeholder="Enter your sentence here..."></textarea>
+
+        <button id="calculate">Calculate Embedding</button> -->
+
         <div id="loading" class="loading">
-            Loading model and computing embedding... This might take a few moments on first run.
+            Computing embedding...
         </div>
-        
+
         <div id="result"></div>
     </div>
-
-    <script>
+    <script lang="ts">
         const input = document.getElementById('input');
-        const calculateBtn = document.getElementById('calculate');
-        const loading = document.getElementById('loading');
+        const calculate = document.getElementById('calculate');
         const result = document.getElementById('result');
+        const loading = document.getElementById('loading');
+        const initial_sentence = document.getElementById('initial-sentence');
+        const form = document.querySelector('form');
+        const characterCountText = document.getElementById('character-count');
 
-        let model = null;
+        let model;
+        let indx = Math.floor(Math.random() * 50);
+        let list;
+        let initialEmbedding;
+        let initialSentence;
+        let characterCount;
+        let initialCharacterCount;
+
+        // Create a type with a character difference, embedding difference, and score.
+        // const Score = {
+        //     characterDiff: number,
+        //     embeddingDiff: number,
+        //     score: number
+        // };
+
+        const scores = [];
+
+
+        loadModel();
+        fetch("../shrtn.json")
+            .then(response => response.json())
+            .then(data => {
+                list = data;
+                initialSentence = list.sentences[indx];
+                console.log(initialSentence);
+                // const initialSentence = list.sentences[indx];
+                initialCharacterCount = initialSentence.length
+                characterCount = initialCharacterCount;
+                initial_sentence.textContent = initialSentence;
+                input.value = initialSentence;
+            });
+
+        function computeScore(characterDiff, embeddingDiff) {
+            // First 5 character are 5 points
+            // Next 5 characters are 8 points
+            // Next 2 characters are 10 points
+            // All other characters are 15 points
+            let characterSubScore = 5 * Math.min(characterDiff, 5) +
+                8 * Math.min(Math.max(characterDiff - 5, 0), 5) +
+                10 * Math.min(Math.max(characterDiff - 10, 0), 2) +
+                15 * Math.max(characterDiff - 12, 0);
+
+            let embeddingSubScore = 10 * (1 - embeddingDiff);
+
+            return Math.floor(embeddingSubScore * characterSubScore);
+
+        }
 
         async function loadModel() {
-            try {
-                model = await tf.loadGraphModel(
-                    'https://tfhub.dev/tensorflow/tfjs-model/universal-sentence-encoder-lite/1/default/1',
-                    { fromTFHub: true }
-                );
-                return true;
-            } catch (error) {
-                console.error('Error loading model:', error);
-                return false;
-            }
+            model = await use.load();
+            console.log('Model loaded');
+            loading.classList.remove('visible');
+
+            // Embed the initial sentence.
+            initialEmbedding = await model.embed(initialSentence);
+            characterCountText.textContent = characterCount;
         }
 
-        async function calculateEmbedding(text) {
-            if (!model) {
-                const loaded = await loadModel();
-                if (!loaded) {
-                    throw new Error('Failed to load model');
-                }
-            }
-
-            const embeddings = await model.predict(tf.tensor([text]));
-            return Array.from(await embeddings.data());
+        function calculateCharacterCountDifference(sentence) {
+            return initialCharacterCount - sentence.length;
         }
 
-        calculateBtn.addEventListener('click', async () => {
-            const text = input.value.trim();
-            
-            if (!text) {
-                result.innerHTML = '<div class="error">Please enter a sentence.</div>';
-                return;
-            }
+        function calculateEmbeddingDifference(embedding) {
+            return tf.losses.cosineDistance(embedding, initialEmbedding).arraySync();
+        }
 
-            calculateBtn.disabled = true;
+        calculate.addEventListener('click', async () => {
             loading.classList.add('visible');
-            result.innerHTML = '';
+            result.textContent = '';
 
-            try {
-                const embedding = await calculateEmbedding(text);
-                
-                const formattedResult = `Embedding vector (${embedding.length} dimensions):
-                
-[${embedding.slice(0, 8).map(n => n.toFixed(6)).join(', ')},
- ...,
- ${embedding.slice(-8).map(n => n.toFixed(6)).join(', ')}]`;
-                
-                result.textContent = formattedResult;
-            } catch (error) {
-                result.innerHTML = '<div class="error">Error computing embedding. Please try again.</div>';
-                console.error('Error:', error);
-            } finally {
-                calculateBtn.disabled = false;
-                loading.classList.remove('visible');
+            if (!model) {
+                await loadModel();
             }
+            // Embed the input sentence.
+            const embeddings = await model.embed(input.value);
+            const characterDiff = Math.round(calculateCharacterCountDifference(input.value), 2);
+            const embeddingDiff = Math.max(0, calculateEmbeddingDifference(embeddings)).toFixed(2);
+
+            // Print the embeddings.
+            scores.push({
+                characterDiff,
+                embeddingDiff,
+                score: computeScore(characterDiff, embeddingDiff)
+            });
+            result.textContent = `Character count difference: ${characterDiff}\n` +
+                `Embedding difference: ${embeddingDiff}` + '\n' + `Score: ${computeScore(characterDiff, embeddingDiff)}`;
+            loading.classList.remove('visible');
         });
+
+        next.addEventListener('click', () => {
+            // Refresh the page
+            window.location.reload();
+        });
+
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            calculate.click();
+        });
+
+        input.addEventListener('keydown', () => {
+            characterCount = input.value.length;
+            characterCountText.textContent = characterCount;
+        });
+
+
+
     </script>
 </body>
+
 </html>
