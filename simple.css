@@ -5,11 +5,11 @@
 :root {
     --madder: #C41230;
     --greh: #a5a5a7;
-    /* --zomp: #2CA58D; */
-    --zomp: #0c694d;
-    --background: rgb(240, 243, 243);
-    --accent-1: #0c694d;
-    --section-outline-color: #0c7e323d;
+    --background: #f0f3f3;
+    /* --accent-1: #004F2D; */
+    --accent-1: #26547C;
+    /* --section-outline-color: #0c7e323d; */
+    --section-outline-color: #5393CA;
 }
 
 .marginless {
@@ -163,7 +163,7 @@ br {
         max-height: 30vh;
 
     }
-
+    
     #left {
         display: block;
     }
