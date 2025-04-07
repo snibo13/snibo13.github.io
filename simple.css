@@ -7,9 +7,10 @@
     --greh: #a5a5a7;
     --background: #f0f3f3;
     /* --accent-1: #004F2D; */
-    --accent-1: #26547C;
+    --accent-1:#16836d;
     /* --section-outline-color: #0c7e323d; */
-    --section-outline-color: #5393CA;
+    
+    --section-outline-color:#2CA58D;
 }
 
 .marginless {
