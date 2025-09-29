@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: lightgray;
+        }
+
+        main {
+            width: 60vw;
+            height: 60vw;
+            background-color: beige;
+            border: 5px solid black;
+            border-radius: 20px;
+        }
+    </style>
+    <script>
+        const main = document.querySelector("main");
+        const dotSize = 10;
+        const spacing = 20;
+        const rows = Math.floor(main.clientHeight / spacing);
+        const cols = Math.floor(main.clientWidth / spacing);
+        for (let i = 0; i < rows; i++) {
+            for (let j = 0; j < cols; j++) {
+                const dot = document.createElement("div");
+                dot.style.width = `${dotSize}px`;
+                dot.style.height = `${dotSize}px`;
+                dot.style.backgroundColor = "black";
+                dot.style.borderRadius = "50%";
+                dot.style.position = "absolute";
+                dot.style.top = `${i * spacing + spacing / 2 - dotSize / 2}px`;
+                dot.style.left = `${j * spacing + spacing / 2 - dotSize / 2}px`;
+                main.appendChild(dot);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <main></main>
+</body>
+
+</html>

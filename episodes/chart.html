@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alignment Chart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            touch-action: none;
+            /* Prevent scrolling on touch devices while dragging */
+        }
+
+        #draggable-icon {
+            cursor: grab;
+            user-select: none;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease-out;
+        }
+
+        #draggable-icon.dragging {
+            cursor: grabbing;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .grid-line {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen p-4">
+
+
+    <div class="flex flex-col items-center w-full max-w-lg md:max-w-xl lg:max-w-2xl">
+
+        <div class="flex w-full items-center justify-center">
+
+            <!-- Alignment Chart Grid -->
+            <div id="grid-container"
+                class="relative w-1/2 aspect-square bg-gray-800 rounded-lg shadow-2xl border-2 border-gray-700 overflow-hidden">
+                <!-- Grid Lines -->
+                <div class="grid-line w-full h-[2px] top-1/2 left-0 -translate-y-1/2"></div>
+                <!-- <div class="grid-line w-full h-[2px] top-2/3 left-0 -translate-y-1/2"></div> -->
+                <!-- <div class="grid-line w-[2px] h-full left-1/3 top-0 -translate-x-1/2"></div> -->
+                <div class="grid-line w-[2px] h-full left-1/2 top-0 -translate-x-1/2"></div>
+                <!-- Draggable Icon -->
+                <div id="draggable-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="w-full h-full text-cyan-400">
+                        <path
+                            d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Display -->
+    <div id="alignment-result"
+        class="mt-8 text-2xl font-bold bg-gray-800 px-6 py-3 rounded-lg shadow-lg border border-gray-700">
+        What to do? What to do?
+    </div>
+
+    <script>
+        const draggableIcon = document.getElementById('draggable-icon');
+        const gridContainer = document.getElementById('grid-container');
+        const alignmentResult = document.getElementById('alignment-result');
+        const options = ["Snooze", "Up and at 'em", "Turn off the alarm"];
+        const option_points = [
+            [gridContainer.clientWidth * 0.25, gridContainer.clientHeight * 0.75], // Snooze
+            [gridContainer.clientWidth, gridContainer.clientHeight * 0.5],  // Up and at 'em
+            [gridContainer.clientWidth * 0.25, gridContainer.clientHeight * 0.25], // Turn off the alarm
+        ];
+        const option_colors = ["#3B82F6", "#10B981", "#EF4444"]; // Tailwind colors: blue-500, green-500, red-500
+        let isDragging = false;
+
+        // Initialize icon at the center
+        positionIcon(gridContainer.clientWidth / 2, gridContainer.clientHeight / 2);
+
+        // --- Event Listeners ---
+        draggableIcon.addEventListener('mousedown', startDrag);
+        draggableIcon.addEventListener('touchstart', startDrag, { passive: false });
+
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('touchmove', drag, { passive: false });
+
+        document.addEventListener('mouseup', stopDrag);
+        document.addEventListener('touchend', stopDrag);
+
+        window.addEventListener('resize', () => {
+            // Re-center on resize if not dragging
+            if (!isDragging) {
+                positionIcon(gridContainer.clientWidth / 2, gridContainer.clientHeight / 2);
+            }
+        });
+
+
+        /**
+         * Creates a gradient from a set of points and applies it to an element's background.
+         * @param {HTMLElement} element - The element to apply the background to.
+         * @param {Object[]} stops - An array of gradient stop objects.
+         * @param {string} stops[].color - The color for the stop (e.g., 'rgba(255,0,0,0.5)').
+         * @param {number} stops[].x - The horizontal position (0-100).
+         * @param {number} stops[].y - The vertical position (0-100).
+         */
+        function applyGradientBackground(element, stops) {
+            const gradientString = stops.map(stop =>
+                `radial-gradient(circle at ${stop.x}% ${stop.y}%, ${stop.color}, transparent 60%)`
+            ).join(', ');
+            element.style.backgroundImage = gradientString;
+        }
+
+        // Apply initial gradient background
+        const gradientStops = option_points.map((point, index) => ({
+            color: option_colors[index] + '80', // Adding alpha for transparency
+            x: (point[0] / gridContainer.clientWidth) * 100,
+            y: (point[1] / gridContainer.clientHeight) * 100
+        }));
+        applyGradientBackground(gridContainer, gradientStops);
+
+        // --- Drag Functions ---
+        function startDrag(e) {
+            e.preventDefault();
+            isDragging = true;
+            draggableIcon.classList.add('dragging');
+        }
+
+        function drag(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+
+            const rect = gridContainer.getBoundingClientRect();
+
+            // Handle both mouse and touch events
+            const clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+            const clientY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
+
+            let x = clientX - rect.left;
+            let y = clientY - rect.top;
+
+            // Constrain to grid boundaries
+            x = Math.max(0, Math.min(x, rect.width));
+            y = Math.max(0, Math.min(y, rect.height));
+
+            positionIcon(x, y);
+            updateAssignment(x, y, option_points, options);
+        }
+
+        function stopDrag() {
+            if (!isDragging) return;
+            isDragging = false;
+            draggableIcon.classList.remove('dragging');
+        }
+
+        // --- Helper Functions ---
+        function positionIcon(x, y) {
+            draggableIcon.style.left = `${x}px`;
+            draggableIcon.style.top = `${y}px`;
+        }
+
+        function updateAssignment(x, y, option_points, options) {
+            console.assert(option_points.length == options.length);
+            let best_index = 0;
+            let best_distance = Number.POSITIVE_INFINITY;
+            for (let i = 0; i < option_points.length; i++) {
+                const dx = x - option_points[i][0];
+                const dy = y - option_points[i][1];
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < best_distance) {
+                    best_distance = distance;
+                    best_index = i;
+                }
+            }
+            // Update the result display
+            alignmentResult.textContent = options[best_index];
+        }
+    </script>
+</body>
+
+</html>
