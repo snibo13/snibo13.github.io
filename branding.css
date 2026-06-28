@@ -1,0 +1,574 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=Faustina:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    /* Root Palette Colors - Tree & Wood Tones */
+    --rusty-spice: #a54d28;
+    /* Terracotta / Rust */
+    --almond-cream: #e5d6c3;
+    /* Warm sand / Birch bark */
+    --dark-emerald: #086942;
+    /* Moss green */
+    --deep-forest: #12452c;
+    /* Forest pine */
+    --limestone: #f1edeb;
+    /* Light clay / Limestone */
+
+    /* Earthy additions */
+    --forest-shadow: #0b1410;
+    /* Deep forest canopy shadow (replacing deep-space-blue as dark bg) */
+    --warm-soil: #1c130c;
+    /* Rich dark soil (replacing deep-space-blue as light text) */
+    --bark-brown: #3e2716;
+    /* Dry tree bark brown */
+    --dark-rust: #863615;
+    /* High-contrast rusty spice for light theme text links */
+    --night-card-bg: #050907;
+    /* Solid moss-black green for the article card in night theme */
+
+    /* High Contrast Tints for Dark Theme */
+    --light-moss: #8cdbb9;
+    /* Soft moss/mint for dark theme headers */
+    --light-rust: #f09f7a;
+    /* Soft terracotta for dark theme links */
+    --light-gold: #e8cca5;
+    /* Soft warm birch for hover highlights */
+
+    /* Frosted / Transparent Variations */
+    --white-translucent-15: rgba(255, 255, 255, 0.15);
+    --deep-forest-translucent-08: rgba(18, 69, 44, 0.08);
+    --limestone-translucent-06: rgba(241, 237, 235, 0.06);
+    --limestone-translucent-08: rgba(241, 237, 235, 0.08);
+    --moss-translucent-04: rgba(140, 219, 185, 0.04);
+    --moss-translucent-08: rgba(140, 219, 185, 0.08);
+
+    /* Theme Tokens - Light Mode (Limestone) */
+    --bg-light: var(--limestone);
+    --text-light: var(--warm-soil);
+    --primary-light: var(--deep-forest);
+    --accent-light: var(--dark-rust);
+    --accent-hover-light: var(--dark-emerald);
+    --card-bg-light: var(--white-translucent-15);
+    --nav-hover-bg-light: var(--deep-forest-translucent-08);
+    --divider-color-light: var(--deep-forest);
+    --divider-opacity-light: 0.25;
+
+    /* Theme Tokens - Dark Mode (Deep Forest) */
+    --bg-dark: var(--deep-forest);
+    --text-dark: var(--limestone);
+    --primary-dark: var(--light-moss);
+    --accent-dark: var(--light-rust);
+    --accent-hover-dark: var(--light-gold);
+    --card-bg-dark: var(--limestone-translucent-06);
+    --nav-hover-bg-dark: var(--limestone-translucent-08);
+    --divider-color-dark: var(--light-moss);
+    --divider-opacity-dark: 0.2;
+
+    /* Theme Tokens - Midnight Mode (Forest Shadow) */
+    --bg-midnight: var(--night-card-bg);
+    --text-midnight: var(--almond-cream);
+    --primary-midnight: var(--light-moss);
+    --accent-midnight: var(--light-rust);
+    --accent-hover-midnight: var(--light-gold);
+    --card-bg-midnight: var(--forest-shadow);
+    --nav-hover-bg-midnight: var(--moss-translucent-08);
+    --divider-color-midnight: var(--light-moss);
+    --divider-opacity-midnight: 0.12;
+
+    /* Semantic assignments (Light by default) */
+    --bg-color: var(--bg-light);
+    --text-color: var(--text-light);
+    --primary-color: var(--primary-light);
+    --accent-color: var(--accent-light);
+    --accent-hover: var(--accent-hover-light);
+
+    --card-bg: var(--card-bg-light);
+
+    --nav-hover-bg: var(--nav-hover-bg-light);
+    --divider-color: var(--divider-color-light);
+    --divider-opacity: var(--divider-opacity-light);
+}
+
+[data-theme="forest"] {
+    /* Forest Theme Token Overrides */
+    --bg-color: var(--bg-dark);
+    --text-color: var(--text-dark);
+    --primary-color: var(--primary-dark);
+    --accent-color: var(--accent-dark);
+    --accent-hover: var(--accent-hover-dark);
+
+    --card-bg: var(--card-bg-dark);
+
+    --nav-hover-bg: var(--nav-hover-bg-dark);
+    --divider-color: var(--divider-color-dark);
+    --divider-opacity: var(--divider-opacity-dark);
+}
+
+[data-theme="night"] {
+    /* Night Theme Token Overrides */
+    --bg-color: var(--bg-midnight);
+    --text-color: var(--text-midnight);
+    --primary-color: var(--primary-midnight);
+    --accent-color: var(--accent-midnight);
+    --accent-hover: var(--accent-hover-midnight);
+
+    --card-bg: var(--card-bg-midnight);
+
+    --nav-hover-bg: var(--nav-hover-bg-midnight);
+    --divider-color: var(--divider-color-midnight);
+    --divider-opacity: var(--divider-opacity-midnight);
+}
+
+body {
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    font-family: 'Chivo Mono', monospace;
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+}
+
+/* Base anchor styles to prevent default blue/purple highlights */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Style inline links specifically */
+p a,
+#bio a,
+#currently a,
+#mobile-disclaimer a,
+#blog a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+p a:hover,
+#bio a:hover,
+#currently a:hover,
+#mobile-disclaimer a:hover,
+#blog a:hover {
+    color: var(--accent-hover);
+}
+
+/* Page Layout Wrapper */
+#page-wrapper {
+    display: flex;
+    max-width: 950px;
+    margin: 60px auto;
+    padding: 0 20px;
+    gap: 40px;
+    align-items: stretch;
+    justify-content: center;
+    position: relative;
+}
+
+/* Sidebar Navigation Column */
+#sidebar {
+    width: 180px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.sidebar-logo {
+    width: 100px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-logo path {
+    fill: var(--primary-color);
+    transition: fill 0.3s ease;
+}
+
+.sidebar-logo:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+
+.site-title {
+    font-family: 'Faustina', serif;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    line-height: 1.2;
+    transition: color 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: 'Chivo Mono', monospace;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.nav-item i {
+    width: 18px;
+    text-align: center;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    background-color: var(--nav-hover-bg);
+    color: var(--accent-hover);
+    transform: translateX(5px);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle-btn i {
+    color: var(--primary-color);
+}
+
+/* On hover, morph the icon to the next theme's shape (no color change) */
+.theme-toggle-btn:hover i::before {
+    content: "\f1bb"; /* Tree icon for Forest theme */
+}
+
+[data-theme="forest"] .theme-toggle-btn i {
+    color: var(--text-color);
+}
+
+[data-theme="forest"] .theme-toggle-btn:hover i::before {
+    content: "\f186"; /* Moon icon for Night theme */
+}
+
+[data-theme="night"] .theme-toggle-btn i {
+    color: var(--primary-color);
+}
+
+[data-theme="night"] .theme-toggle-btn:hover i::before {
+    content: "\f6fc"; /* Mountain icon for Stone theme */
+}
+
+/* Vertical Divider */
+#vertical-divider {
+    width: 1px;
+    background-color: var(--divider-color);
+    opacity: var(--divider-opacity);
+    align-self: stretch;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Blog Container */
+#blog-container {
+    width: 650px;
+    max-width: 100%;
+    flex-shrink: 0;
+    border-radius: 8px;
+    padding: 2em;
+    background-color: var(--card-bg);
+    transition: background-color 0.3s ease;
+}
+
+#blog-title {
+    margin-top: 0;
+    margin-bottom: 0.8em;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+#blog {
+    font-family: 'Chivo Mono', monospace;
+    line-height: 1.6;
+}
+
+#blog>h1,
+#blog>h2,
+#blog>title,
+#blog-title {
+    font-family: 'Faustina', serif;
+}
+
+#blog article {
+    font-family: 'Chivo Mono', monospace;
+}
+
+/* Responsive Rules */
+@media (max-width: 768px) {
+    #page-wrapper {
+        flex-direction: column;
+        align-items: center;
+        margin: 30px auto;
+        gap: 30px;
+    }
+
+    #sidebar {
+        width: 100%;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .logo-container {
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-item:hover {
+        transform: translateY(-2px);
+    }
+
+    #vertical-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    #blog-container {
+        width: 100%;
+        padding: 1.5em;
+    }
+}
+
+/* --- Landing Page (new-index.html) Layout & Card Styles --- */
+
+#container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+}
+
+#left-third {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 40px;
+    font-family: 'Chivo Mono', monospace;
+}
+
+#left-third h1 {
+    font-family: 'Faustina', serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin: 10px 0 0 0;
+    line-height: 1.1;
+    transition: color 0.3s ease;
+}
+
+#bio {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+#bio span {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+#bio a.prof {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#bio a.prof:hover {
+    color: var(--accent-hover);
+}
+
+#icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 1.6rem;
+    margin-top: 10px;
+}
+
+#icons a {
+    color: var(--text-color);
+    transition: color 0.2s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+#icons a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+#two-thirds {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#mobile-disclaimer {
+    font-size: 0.8rem;
+    font-style: italic;
+    opacity: 0.8;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.masonry {
+    column-count: 1;
+    column-gap: 20px;
+}
+
+.work-stone {
+    display: block;
+    break-inside: avoid;
+    margin-bottom: 20px;
+    padding: 24px;
+    border-radius: 12px;
+    font-family: 'Chivo Mono', monospace;
+    color: var(--text-color);
+    background-color: var(--card-bg);
+    transition: transform 0.2s ease, background-color 0.3s ease, border-color 0.3s ease;
+    text-decoration: none;
+}
+
+.work-stone h2.sub-section-text {
+    font-family: 'Faustina', serif;
+    font-size: 1.35rem;
+    margin-top: 0;
+    margin-bottom: 12px;
+    line-height: 1.25;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.work-stone p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0 0 12px 0;
+}
+
+.work-stone .footnote {
+    font-size: 0.75rem;
+    font-style: italic;
+    opacity: 0.75;
+    margin: 0;
+    text-align: right;
+}
+
+.work-stone .work-flag {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+/* Tooltip Styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    text-align: center;
+    border-radius: 6px;
+    padding: 4px 0;
+    position: absolute;
+    z-index: 10;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -50px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    font-size: 0.7rem;
+    font-family: 'Chivo Mono', monospace;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--primary-color) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Desktop Styles for Landing Page */
+@media screen and (min-width: 768px) {
+    #container {
+        display: grid;
+        grid-template-columns: 300px 1px 1fr;
+        gap: 50px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 60px 30px;
+        align-items: stretch;
+    }
+
+    #left-third {
+        position: sticky;
+        top: 60px;
+        height: fit-content;
+        margin-bottom: 0;
+        padding-right: 10px;
+    }
+
+    #mobile-disclaimer {
+        display: none;
+    }
+
+    .masonry {
+        column-count: 2;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .masonry {
+        column-count: 3;
+    }
+}
