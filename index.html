@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/09e18ce3a6.js" crossorigin="anonymous"></script>
-    <link href="new-simple.css" rel="stylesheet" type="text/css" />
-    <!-- <script src="raw.js"></script> -->
+    <link href="branding.css" rel="stylesheet" type="text/css" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7TVZ77RXFX"></script>
     <script>
@@ -16,103 +15,100 @@
 
         gtag('config', 'G-7TVZ77RXFX');
     </script>
+    <script>
+        // Immediately set theme to prevent flickering before DOM renders
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (systemPrefersDark ? 'forest' : 'stone');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
     <title>Sidney Nimako</title>
 </head>
-<style>
-
-</style>
 
 <body class="marginless" id="container">
+    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
     <div id="left-third">
-        <img src="SNB Logo.png" style="width: 70px; float: left; justify-self: left; filter: invert(100%);" />
+        <div class="logo-container">
+            <svg class="sidebar-logo" viewBox="0 0 3535 2790" fill="currentColor">
+                <path
+                    d="M 2365 1637 L 2323 1756 L 2324 1762 L 2329 1768 L 2387 1766 L 2423 1768 L 2450 1772 L 2536 1795 L 2613 1823 L 2668 1849 L 2710 1876 L 2732 1899 L 2737 1916 L 2747 1932 L 2760 1944 L 2778 1953 L 2792 1956 L 2820 1953 L 2842 1941 L 2858 1922 L 2866 1899 L 2866 1878 L 2860 1855 L 2847 1828 L 2827 1801 L 2808 1782 L 2779 1759 L 2746 1738 L 2700 1714 L 2649 1692 L 2591 1671 L 2528 1652 L 2478 1640 L 2428 1633 L 2372 1631 Z M 2494 681 L 2469 678 L 2438 688 L 2421 703 L 2408 728 L 2350 1080 L 2284 1374 L 2163 1784 L 2123 1871 L 2079 1948 L 2057 2004 L 2047 2066 L 2044 2146 L 2047 2186 L 2061 2201 L 2096 2162 L 2179 2044 L 2231 1956 L 2271 1876 L 2299 1805 L 2410 1426 L 2476 1141 L 2541 756 L 2541 736 L 2532 711 L 2514 691 Z M 1738 398 L 1693 408 L 1658 444 L 1601 684 L 1497 872 L 1333 1037 L 1167 1173 L 1012 1280 L 987 1322 L 990 1356 L 1010 1385 L 1041 1400 L 1080 1396 L 1373 1181 L 1513 1054 L 1620 934 L 1656 879 L 1743 688 L 1761 991 L 1714 1446 L 1586 2048 L 1488 2442 L 1497 2570 L 1528 2608 L 1570 2623 L 1623 2614 L 1686 2576 L 1935 2343 L 1876 2208 L 1623 2447 L 1698 2162 L 1831 1564 L 1895 1018 L 1887 762 L 1857 568 L 1803 437 L 1776 411 Z M 1211 85 L 1109 68 L 961 78 L 741 154 L 569 311 L 457 520 L 432 729 L 468 919 L 929 1884 L 986 2064 L 999 2204 L 968 2311 L 901 2421 L 803 2523 L 700 2593 L 582 2640 L 468 2654 L 358 2633 L 280 2591 L 204 2501 L 149 2349 L 135 2201 L 159 2097 L 235 1954 L 340 1825 L 470 1724 L 630 1648 L 656 1605 L 635 1544 L 573 1528 L 437 1587 L 289 1689 L 171 1811 L 68 1972 L 11 2120 L 0 2254 L 32 2434 L 105 2599 L 203 2702 L 333 2767 L 446 2788 L 562 2782 L 797 2693 L 999 2515 L 1118 2295 L 1132 2123 L 1076 1891 L 614 925 L 575 793 L 567 664 L 619 481 L 759 306 L 921 224 L 1120 204 L 1238 249 L 1303 355 L 1284 460 L 1156 660 L 1161 699 L 1189 730 L 1228 739 L 1267 723 L 1405 520 L 1441 363 L 1416 270 L 1367 188 L 1291 121 Z M 3232 30 L 3088 2 L 2905 5 L 2764 31 L 2633 88 L 2550 159 L 2473 272 L 2445 372 L 2440 488 L 2477 555 L 2551 548 L 2575 509 L 2579 388 L 2604 313 L 2686 215 L 2810 158 L 2981 135 L 3152 147 L 3245 189 L 3321 267 L 3355 368 L 3360 550 L 3338 670 L 3287 779 L 3128 920 L 2720 1193 L 2695 1234 L 2707 1286 L 2748 1313 L 3166 1273 L 3247 1301 L 3318 1366 L 3383 1489 L 3399 1625 L 3312 2000 L 3187 2224 L 3085 2314 L 2964 2383 L 2692 2457 L 2528 2458 L 2381 2434 L 2136 2322 L 2042 2217 L 2029 2117 L 2048 1987 L 2124 1846 L 2176 1687 L 2160 1674 L 2009 1777 L 1938 1895 L 1898 2056 L 1902 2217 L 1947 2325 L 2011 2398 L 2297 2549 L 2472 2588 L 2667 2594 L 2830 2571 L 3006 2512 L 3159 2427 L 3275 2328 L 3365 2207 L 3440 2043 L 3533 1644 L 3527 1513 L 3490 1390 L 3412 1268 L 3299 1175 L 3189 1140 L 3044 1143 L 3368 896 L 3441 778 L 3486 631 L 3493 392 L 3459 241 L 3371 117 Z"
+                    fill-rule="evenodd" />
+            </svg>
+        </div>
         <br>
-        <h1 style="font-size: 5vh;">Sidney Nimako</h1>
+        <h1>Sidney Nimako</h1>
         <div id="bio">
-            I'm a second year masters student in robotics at <span style="color: var(--madder)">Carnegie Mellon
-                University.</span>
+            I'm a second year masters student in robotics at <span>Carnegie Mellon University.</span>
             <br>
             <br>
-            <!-- My research interests are in assistive robotics, human-robot interaction, and robotic manipulation. -->
             I am interested in building human-centered robotic systems focusing on:
-            search and rescue systems, assistive robotics, and safe pHRI
+            search and rescue systems, assistive robotics, and pHRI
             <br>
             <br>
             Currently:
             <span id="currently">
-                I'm currently working with
-                <br>
-                <a class="prof" href="https://www.zoomlab.ri.cmu.edu/">Dr. Zeynep
-                    Temel</a> and <a class="prof" href="https://shredlabcmu.github.io/"> Dr. Melisa Orta
-                    Martinez</a>
-                <br>on miniature-robotics for search and rescue.
+                I'm currently working on Robotics and Physical AI @ <a class="prof"
+                    href="https://scale.com/physical-ai">Scale
+                    AI</a>.
             </span>
             <br>
-            Previously @: CMU Robomechanics Lab, DoorDash Labs, Meta FAIR
+            Previously @: CMU Zoom lab, CMU SHRED lab, CMU Robomechanics Lab, DoorDash Labs, Meta FAIR
         </div>
         <br>
         <br>
         <div id="icons">
-            <a href="http://projects.snibo.me" class="tooltip">
-                <span class="tooltiptext">
-                    Blog
-                </span>
+            <a href="http://blog.snibo.me" class="tooltip">
+                <span class="tooltiptext">Blog</span>
                 <i class="fa-solid fa-pen"></i>
             </a>
-            <a href="https://www.linkedin.com/in/snibo" class="tooltip">
-                <span class="tooltiptext">
-                    Linkedin
-                </span>
+            <a href="https://www.linkedin.com/in/snibo" class="tooltip" target="_blank">
+                <span class="tooltiptext">LinkedIn</span>
                 <i class="fa-brands fa-linkedin"></i>
             </a>
             <a href="mailto:snimakob@gmail.com" class="tooltip">
-                <span class="tooltiptext">
-                    Contact Me
-                </span>
+                <span class="tooltiptext">Contact</span>
                 <i class="fa-solid fa-envelope"></i>
             </a>
-            <a href="Resume.pdf" class="tooltip">
-                <span class="tooltiptext">
-                    Resume
-                </span>
-
+            <a href="Resume.pdf" class="tooltip" target="_blank">
+                <span class="tooltiptext">Resume</span>
                 <i class="fa-solid fa-file"></i>
             </a>
-            <a href="CV.pdf" class="tooltip">
-                <span class="tooltiptext">
-                    CV
-                </span>
-                <image src="files.svg" alt="Files Icon" style="height: 40px; top: 7px; position: relative;" />
-                <!-- <i class="fa-solid fa-file"></i> -->
+            <a href="CV.pdf" class="tooltip" target="_blank">
+                <span class="tooltiptext">CV</span>
+                <i class="fa-solid fa-file-lines"></i>
             </a>
-            <a href="https://www.github.com/snibo13" class="tooltip">
-                <span class="tooltiptext">
-                    GitHub
-                </span>
+            <a href="https://www.github.com/snibo13" class="tooltip" target="_blank">
+                <span class="tooltiptext">GitHub</span>
                 <i class="fa-brands fa-github"></i>
             </a>
         </div>
     </div>
-    </div>
-    <div id="two-thirds" style="">
-        <p id="mobile-disclaimer"> For more information please visit this site on a computer or checkout
-            my
-            <a href="Resume.pdf">resume</a> or <a href="CV.pdf">CV</a>
-        </p>
+
+    <div id="vertical-divider"></div>
+
+    <div id="two-thirds">
+        <p id="mobile-disclaimer"> For more information please visit this site on a computer or checkout my <a
+                href="Resume.pdf">resume</a> or <a href="CV.pdf">CV</a></p>
+
         <div class="masonry">
             <a href="https://ieeexplore.ieee.org/abstract/document/10770037" target="_blank">
-                <div class="work-stone hover-scale" style="background-color: whitesmoke;">
+                <div class="work-stone hover-scale">
                     <h2 class="sub-section-text">Heterogenous Collaboration: A new approach for search and rescue
-                        operations
-                    </h2>
+                        operations</h2>
                     <p class="sub-section-text">2024 IEEE SSRR (Symposium on Safety, Security, and Rescue Robotics)</p>
                     <p class="large-description sub-section-text"></p>
                     <p class="footnote">Publication</p>
                 </div>
             </a>
 
-            <div class="work-stone" style="background-color: #88B396;">
-                <h2 class="sub-section-text">DoorDash Labs </h2>
-                <image src="Labs Logo.png" alt="DoorDash Labs Logo" class="work-flag" loading="lazy" />
+            <div class="work-stone" style="background-color: #88B396; color: #1c130c;">
+                <h2 class="sub-section-text" style="color: #1c130c;">DoorDash Labs</h2>
+                <img src="Labs Logo.png" alt="DoorDash Labs Logo" class="work-flag" loading="lazy" />
                 <p class="sub-section-title">Hardware Engineering Intern | 2022 + 2023</p>
                 <p class="large-description sub-section-text">
                     Electromechanical design and controls for a four quadrant dynamometer using a BLDC, customized C
@@ -121,36 +117,30 @@
                 <p class="footnote">Internship</p>
             </div>
 
-            <div class="work-stone" style="background-color: rgb(37, 37, 39); color: rgb(92, 92, 92);">
-                <h2 class="sub-section-text">CMU Robomechanics Lab</h2>
-                <image src="rml-logo-robots-color.png" alt="Robomechanics Lab Logo" class="work-flag" />
+            <div class="work-stone" style="background-color: rgb(37, 37, 39); color: #f1edeb;">
+                <h2 class="sub-section-text" style="color: #8cdbb9;">CMU Robomechanics Lab</h2>
+                <img src="rml-logo-robots-color.png" alt="Robomechanics Lab Logo" class="work-flag" />
                 <p class="sub-section-title">Undergraduate Research Assistant | 2022 - 2023</p>
                 <p class="large-description sub-section-text">Simulations and models to understand the costs and
-                    controls of
-                    spined quadruped robots.</p>
+                    controls of spined quadruped robots.</p>
                 <p class="footnote">Co-Curricular</p>
             </div>
 
-            <a href="http://projects.snibo.me/facebook-ai-research-internship" class="hover-scale" target="_blank">
-                <div class="work-stone hover-scale" style=" background-color: white">
+            <a href="http://facebook-ai-research-internship" class="hover-scale" target="_blank">
+                <div class="work-stone hover-scale">
                     <h2 class="sub-section-text">Robotics Research Intern</h2>
-                    <image src="mair.jpeg" alt="Meta AI Logo" class="work-flag" />
+                    <img src="mair.jpeg" alt="Meta AI Logo" class="work-flag" />
                     <p class="sub-section-text">Meta AI Research | 2021</p>
                     <p class="large-description sub-section-text">Contributed to the development of "D'Manus", a
-                        three-digit
-                        dexterous
-                        robotic hand. Focused on sensor redesigns, detailed documentation, and tribology testing for
-                        soft
-                        capacitive sensors.</p>
+                        three-digit dexterous robotic hand. Focused on sensor redesigns, detailed documentation, and
+                        tribology testing for soft capacitive sensors.</p>
                     <p class="footnote">Internship</p>
                 </div>
             </a>
 
-
-
             <div class="work-stone" style="background-color: #22272F; color: #D1CAA8">
-                <h2 class="sub-section-text">Biomotivate</h2>
-                <image src="biomotivate_logo.webp" alt="Biomotivate Logo" class="work-flag" />
+                <h2 class="sub-section-text" style="color: #e8cca5;">Biomotivate</h2>
+                <img src="biomotivate_logo.webp" alt="Biomotivate Logo" class="work-flag" />
                 <p class="sub-section-text">VR Development Intern | 2020</p>
                 <p class="large-description sub-section-text">
                     Worked with a Pittsburgh-based startup on VR experiences for those in addiction recovery. Developed
@@ -161,61 +151,86 @@
 
             <a href="Juggling_Robot.pdf" class="hover-scale" target="_blank">
                 <div class="work-stone" style="background-color: #26394E; color: white">
-                    <h2 class="sub-section-text">Toss Jugging In-Sim (and On Hardware)</h2>
-                    <image src="Juggling.png" alt="" class="work-flag" />
+                    <h2 class="sub-section-text" style="color: #e8cca5;">Toss Juggling In-Sim (and On Hardware)</h2>
+                    <img src="Juggling.png" alt="" class="work-flag" />
                     <p class="sub-section-text">Mechanics of Manipulation | Fall 2023</p>
                     <p class="large-description sub-section-text">Created a custom simulation of a toss juggling robot
-                        in
-                        MuJoCo and learned a DDPG policy. I also applied the co-design method to design a hardware
-                        system to
-                        embody the policy.</p>
+                        in MuJoCo and learned a DDPG policy. I also applied the co-design method to design a hardware
+                        system to embody the policy.</p>
                     <p class="footnote">Class Project</p>
                 </div>
             </a>
 
-            <div class="work-stone" style="background-color: whitesmoke;">
+            <div class="work-stone">
                 <h2 class="sub-section-text">Trajectory Optimization for Constrained Dynamical Systems</h2>
-                <image src="Spine path.png" alt="" class="work-flag" />
+                <img src="Spine path.png" alt="" class="work-flag" />
                 <p class="sub-section-text">Mathematical Foundations for Robotics | Fall 2023</p>
                 <p class="large-description sub-section-text">Implemented a model predictive controller for a spine
                     quadruped robot, which I also applied to a ballbot driving a wheelchair.</p>
                 <p class="footnote">Class Project</p>
-
             </div>
 
-            <a href="http://projects.snibo.me/phlebot" class="hover-scale" target="_blank">
-                <div class="work-stone hover-scale" style="background-color: whitesmoke;">
+            <a href="http://phlebot" class="hover-scale" target="_blank">
+                <div class="work-stone hover-scale">
                     <h2 class="sub-section-text">Phlebot</h2>
-                    <image src="Phlebot-Logo.JPG" alt="" class="work-flag" />
+                    <img src="Phlebot-Logo.JPG" alt="" class="work-flag" />
                     <p class="sub-section-text">Mechatronic Design | Spring 2023</p>
                     <p class="large-description sub-section-text">
-                        Prototyped an autnonomous venipuncture robot using custom mechanical and electrical systems. Led
+                        Prototyped an autonomous venipuncture robot using custom mechanical and electrical systems. Led
                         electromechanical integration and co-led mechanism design.
                     </p>
                     <p class="footnote">Class Project</p>
                 </div>
             </a>
-            <a href="http://projects.snibo.me/brevis" class="hover-scale" target="_blank">
+
+            <a href="http://brevis" class="hover-scale" target="_blank">
                 <div class="work-stone hover-scale" style="background-color: #1A1A17; color: white;">
-                    <h2 class="sub-section-text">Brevis</h2>
-                    <image src="BrevisFull.JPG" alt="" class="work-flag" />
+                    <h2 class="sub-section-text" style="color: #e8cca5;">Brevis</h2>
+                    <img src="BrevisFull.JPG" alt="" class="work-flag" />
                     <p class="sub-section-text">Spring 2023</p>
                     <p class="large-description sub-section-text">Fully custom macropad created as a precursor to a
                         full-sized keyboard and to explore electronics development.</p>
                     <p class="footnote">Personal Project</p>
                 </div>
             </a>
-
-
-            <!-- <div class="work-stone" style="">
-                <h2 class="sub-section-text"></h2>
-                <image src="DoorDash Logo.png" alt="DoorDash Logo" class="work-flag" />
-                <p class="sub-section-text"> | </p>
-                <p class="large-description sub-section-text"></p>
-            </div> -->
-
-
         </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.getElementById('theme-toggle');
+            const toggleIcon = toggleBtn.querySelector('i');
+            const themes = ['stone', 'forest', 'night'];
+
+            function updateButton(theme) {
+                if (theme === 'forest') {
+                    toggleIcon.className = 'fa-solid fa-tree';
+                    toggleBtn.setAttribute('aria-label', 'Switch to Night Theme');
+                } else if (theme === 'night') {
+                    toggleIcon.className = 'fa-solid fa-sun';
+                    toggleBtn.setAttribute('aria-label', 'Switch to Stone Theme');
+                } else {
+                    toggleIcon.className = 'fa-solid fa-moon';
+                    toggleBtn.setAttribute('aria-label', 'Switch to Forest Theme');
+                }
+            }
+
+            // Sync toggle button with initial theme state
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'stone';
+            updateButton(currentTheme);
+
+            // Click event handler - cycle: stone -> forest -> night -> stone
+            toggleBtn.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'stone';
+                const nextIndex = (themes.indexOf(currentTheme) + 1) % themes.length;
+                const nextTheme = themes[nextIndex];
+
+                document.documentElement.setAttribute('data-theme', nextTheme);
+                localStorage.setItem('theme', nextTheme);
+                updateButton(nextTheme);
+            });
+        });
+    </script>
 </body>
 
 </html>
